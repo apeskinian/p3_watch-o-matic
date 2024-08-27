@@ -86,6 +86,9 @@ def validate_continue(yes_or_no):
 
 
 def menu():
+    """
+    Calls correct function depending on users choice from menu.
+    """
     menu_chosen = get_choice()
     if menu_chosen == '1':
         view_selection('owned','collection')
@@ -96,7 +99,10 @@ def menu():
 
 
 def view_selection(sheet_choice,collection):
-
+    """
+    Displays either current watch collection or wishlist
+    in table format using PrettyTable library.
+    """
     watches = SHEET.worksheet(sheet_choice)
 
     watch_data = watches.get_all_values()
