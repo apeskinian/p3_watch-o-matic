@@ -53,15 +53,14 @@ def validate_choice(user_input):
     """
     Checks if users choice is within valid menu options.
     """
+    clear()
     try:
         if int(user_input) not in range(1,4):
             raise ValueError(
                 f"Please enter either 1, 2, or 3. You entered {user_input}"
             )
-        clear()
     except ValueError as e:
         print(f"Invalid choice: {e}, please try again.\n")
-        clear()
         return False
 
     return True
@@ -76,10 +75,8 @@ def validate_continue(yes_or_no):
             raise ValueError(
                 f"Please enter either y or n. You entered {user_input}"
             )
-        clear()
     except ValueError as e:
         print(f"Invalid choice: {e}, please try again.\n")
-        clear()
         return False
 
     return True
