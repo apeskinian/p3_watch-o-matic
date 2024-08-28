@@ -52,7 +52,9 @@ def get_choice():
     print('3 - Add a watch to the collection or wishlist\n')
     while True: 
         choice = input(
-            'Please enter 1, 2, or 3:\n'
+            'Please enter \033[32m1\033[0m,'
+            ' \033[32m2\033[0m,' 
+            'or \033[32m3\033[0m:\n'
         )
         requested = 'Please enter 1, 2, or 3'
         if validate(choice, ['1','2','3'], requested):
@@ -81,7 +83,10 @@ def continue_app():
     response is given. 
     """
     while True:
-        continue_check = input('Would you like to do anything else? (y/n):\n')
+        continue_check = input(
+            'Would you like to do anything else? ' 
+            '(\033[32my\033[0m/\033[32mn\033[0m):\n'
+        )
         requested = 'Please enter y or n'
         if validate(continue_check, ['y','n'], requested):
             break
@@ -105,7 +110,7 @@ def view_selection(sheet_choice):
         watch_table.add_row(watch_data[row])
 
     print(f'Here are the current watches in your {sheet_choice}:\n')
-    print(watch_table,'\n')
+    print(watch_table.get_string(sortby="Make"),'\n')
 
     continue_app()
 
@@ -116,7 +121,10 @@ def get_watch_detail(detail, is_movement):
         print('2 - Manual')
         print('3 - Automatic\n')
         while True:
-            movement_choice = input('Please enter 1, 2 or 3\n')
+            movement_choice = input(
+                'Please enter \033[32m1\033[0m, '
+                '\033[32m2\033[0m or \033[32m3\033[0m\n'
+            )
             requested = 'Please enter 1, 2 or 3'
             if validate(movement_choice, ['1','2','3'], requested):
                 if movement_choice == '1':
@@ -130,13 +138,13 @@ def get_watch_detail(detail, is_movement):
             watch_detail = input(f'Please enter the {detail} of the watch:\n')
             while True:
                 user_confirm = input(
-                    f'\nYou entered \033[33m{watch_detail}\033[0m, '
-                    'is this correct?: (y/n)'
+                    f'\nYou entered \033[33m{watch_detail.title()}\033[0m, '
+                    'is this correct?: (\033[32my\033[0m/\033[32mn\033[0m)'
                 )
                 requested = 'Please enter y or n'
                 if validate(user_confirm, ['y','n'], requested):
                     if user_confirm.lower() == 'y':
-                        return watch_detail
+                        return watch_detail.title()
                     elif user_confirm.lower() == 'n':
                         break
 
@@ -155,7 +163,9 @@ def add_watch():
     print('2 - Wishlist\n')
 
     while True:
-        list_selection = input('Please enter 1 or 2:\n')
+        list_selection = input(
+            'Please enter \033[32m1\033[0m or \033[32m2\033[0m:\n'
+        )
         requested = 'Please enter 1 or 2'
         if validate(list_selection, ['1','2'], requested):
             break
@@ -174,13 +184,15 @@ def add_watch():
 
     print(
         f'Watch-o-Matic will add the following to your {sheet_to_update}:\n')
-    print(f'Make:     {watch_make}')
-    print(f'Model:    {watch_model}')
-    print(f'Movement: {watch_movement}\n')
+    print(f'Make:     \033[33m{watch_make}\033[0m')
+    print(f'Model:    \033[33m{watch_model}\033[0m')
+    print(f'Movement: \033[33m{watch_movement}\033[0m\n')
     
     while True:
-        final_confirm = input('Please confirm (y/n):\n')
-        requested = 'Please enter y or n'
+        final_confirm = input(
+            'Enter \033[32my\033[0m to accept or \033[32mn\033[0m to cancel:\n'
+        )
+        requested = 'Please enter y to accept or n to cancel'
         if validate(final_confirm, ['y','n'], requested):
             if final_confirm.lower() == 'y':
                 push_data_to_sheet(
@@ -191,11 +203,33 @@ def add_watch():
                 )
                 break
             elif final_confirm.lower() == 'n':
-                continue_app()
+                start_over()
                 break
                 
 
-    
+def start_over():
+    print('Watch addition cancelled. Would you like to:\n')
+    print('1 - Try to add the watch again.')
+    print('2 - Go back to the main menu.')
+    print('3 - Quit the Watch-o-Matic.\n')
+    while True:
+        start_over_check = input(
+            'Please enter \033[32m1\033[0m, '
+            '\033[32m2\033[0m or '
+            '\033[32m3\033[0m:\n'
+        )
+        requested = 'Please enter 1, 2 or 3'
+        if validate(start_over_check, ['1','2','3'], requested):
+            break
+
+    if start_over_check == '1':
+        add_watch()
+    elif start_over_check == '2':
+        menu()
+    elif start_over_check == '3':
+        print('Thank you for using Watch-o-Matic. The app will now close...')
+
+
 def push_data_to_sheet(make, model, movement, sheet):
     print(f'Adding watch to {sheet}...\n')
     data = [make, model, movement]
