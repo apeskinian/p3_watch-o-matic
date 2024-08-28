@@ -46,13 +46,13 @@ def get_choice():
     Get menu choice from user and check for valid response,
     if invalid throw an exception and repeat until valid response is given.
     """
-    print('Please enter one of the options below:\n')
+    print('What would you like do to?\n')
     print('1 - View your current collection')
     print('2 - View your current wishlist')
     print('3 - Add a watch to the collection or wishlist\n')
     while True: 
         choice = input(
-            'What would you like do to? (press 1, 2, or 3 and press Enter):\n'
+            'Please enter 1, 2, or 3:\n'
         )
         requested = 'Please enter 1, 2, or 3'
         if validate(choice, ['1','2','3'], requested):
@@ -88,9 +88,8 @@ def continue_app():
 
     if continue_check.lower() == 'y':
         menu()
-    else:
+    elif continue_check.lower() == 'n':
         print('Thank you for using Watch-o-Matic. The app will now close...')
-        time.sleep(3)
 
 def view_selection(sheet_choice):
     """
@@ -190,13 +189,20 @@ def add_watch():
                     watch_movement,
                     sheet_to_update
                 )
+                break
             elif final_confirm.lower() == 'n':
                 continue_app()
+                break
+                
 
     
 def push_data_to_sheet(make, model, movement, sheet):
-    print('Adding watch to \n')
-    continue_app()
+    print(f'Adding watch to {sheet}...\n')
+    data = [make, model, movement]
+    worksheet = SHEET.worksheet(sheet)
+    worksheet.append_row(data)
+    print(f'New watch successfully added to {sheet}. Loading {sheet}...\n')
+    view_selection(sheet)
 
 
 def main():
