@@ -67,9 +67,9 @@ def menu():
     """
     menu_chosen = get_choice()
     if menu_chosen == '1':
-        view_selection('owned','collection')
+        view_selection('collection')
     elif menu_chosen == '2':
-        view_selection('wishlist','wishlist')
+        view_selection('wishlist')
     else:
         add_watch()
 
@@ -92,7 +92,7 @@ def continue_app():
         print('Thank you for using Watch-o-Matic. The app will now close...')
         time.sleep(3)
 
-def view_selection(sheet_choice,collection):
+def view_selection(sheet_choice):
     """
     Displays either current watch collection or wishlist
     in table format using PrettyTable library.
@@ -105,7 +105,7 @@ def view_selection(sheet_choice,collection):
     for row in range(1,len(watch_data)):
         watch_table.add_row(watch_data[row])
 
-    print(f'Here are the current watches in your {collection}:\n')
+    print(f'Here are the current watches in your {sheet_choice}:\n')
     print(watch_table,'\n')
 
     continue_app()
@@ -115,9 +115,9 @@ def get_watch_detail(detail, is_movement):
         print('Please select the movement:\n')
         print('1 - Quartz')
         print('2 - Manual')
-        print('3 - Automatic')
+        print('3 - Automatic\n')
         while True:
-            movement_choice = input('Please enter 1, 2 or 3')
+            movement_choice = input('Please enter 1, 2 or 3\n')
             requested = 'Please enter 1, 2 or 3'
             if validate(movement_choice, ['1','2','3'], requested):
                 if movement_choice == '1':
@@ -129,14 +129,17 @@ def get_watch_detail(detail, is_movement):
     else:
         while True:
             watch_detail = input(f'Please enter the {detail} of the watch:\n')
-            user_confirm = input(
-                f'You entered \033[33m{watch_detail}\033[0m, '
-                'is this correct?: (y/n)'
-            )
-            requested = 'Please enter y or n'
-            if validate(user_confirm.lower(), ['y','n'], requested):
-                if user_confirm == 'y':
-                    return watch_detail
+            while True:
+                user_confirm = input(
+                    f'\nYou entered \033[33m{watch_detail}\033[0m, '
+                    'is this correct?: (y/n)'
+                )
+                requested = 'Please enter y or n'
+                if validate(user_confirm, ['y','n'], requested):
+                    if user_confirm.lower() == 'y':
+                        return watch_detail
+                    elif user_confirm.lower() == 'n':
+                        break
 
 
 def add_watch():
@@ -160,7 +163,7 @@ def add_watch():
     
     if list_selection == '1':
         print('Adding watch to current Collection:\n')
-        sheet_to_update = 'owned'
+        sheet_to_update = 'collection'
     else:
         print('Adding watch to wishlist:\n')
         sheet_to_update = 'wishlist'
@@ -170,11 +173,30 @@ def add_watch():
     watch_model = get_watch_detail('model', False)
     watch_movement = get_watch_detail('movement', True)
 
-    print(f'Watch make: {watch_make}')
-    print(f'Watch model: {watch_model}')
-    print(f'Watch movement: {watch_movement}')
+    print(
+        f'Watch-o-Matic will add the following to your {sheet_to_update}:\n')
+    print(f'Make:     {watch_make}')
+    print(f'Model:    {watch_model}')
+    print(f'Movement: {watch_movement}\n')
     
+    while True:
+        final_confirm = input('Please confirm (y/n):\n')
+        requested = 'Please enter y or n'
+        if validate(final_confirm, ['y','n'], requested):
+            if final_confirm.lower() == 'y':
+                push_data_to_sheet(
+                    watch_make,
+                    watch_model,
+                    watch_movement,
+                    sheet_to_update
+                )
+            elif final_confirm.lower() == 'n':
+                continue_app()
 
+    
+def push_data_to_sheet(make, model, movement, sheet):
+    print('Adding watch to \n')
+    continue_app()
 
 
 def main():
