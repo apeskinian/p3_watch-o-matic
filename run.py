@@ -52,9 +52,9 @@ def get_choice():
     print('3 - Add a watch to the collection or wishlist\n')
     while True: 
         choice = input(
-            'What would you like do to? (press 1,2, or 3 and press Enter):\n'
+            'What would you like do to? (press 1, 2, or 3 and press Enter):\n'
         )
-        requested = 'Please enter either 1, 2, or 3'
+        requested = 'Please enter 1, 2, or 3'
         if validate(choice, ['1','2','3'], requested):
             break
 
@@ -71,7 +71,7 @@ def menu():
     elif menu_chosen == '2':
         view_selection('wishlist','wishlist')
     else:
-        print('Add a watch has been chosen')
+        add_watch()
 
 
 def continue_app():
@@ -98,11 +98,10 @@ def view_selection(sheet_choice,collection):
     in table format using PrettyTable library.
     """
     watches = SHEET.worksheet(sheet_choice)
-
     watch_data = watches.get_all_values()
     watch_titles = watch_data[0]
-
     watch_table = PrettyTable(watch_titles)
+
     for row in range(1,len(watch_data)):
         watch_table.add_row(watch_data[row])
 
@@ -110,6 +109,72 @@ def view_selection(sheet_choice,collection):
     print(watch_table,'\n')
 
     continue_app()
+
+def get_watch_detail(detail, is_movement):
+    if is_movement:
+        print('Please select the movement:\n')
+        print('1 - Quartz')
+        print('2 - Manual')
+        print('3 - Automatic')
+        while True:
+            movement_choice = input('Please enter 1, 2 or 3')
+            requested = 'Please enter 1, 2 or 3'
+            if validate(movement_choice, ['1','2','3'], requested):
+                if movement_choice == '1':
+                    return 'Quartz'
+                elif movement_choice == '2':
+                    return 'Manual'
+                elif movement_choice == '3':
+                    return 'Automatic'
+    else:
+        while True:
+            watch_detail = input(f'Please enter the {detail} of the watch:\n')
+            user_confirm = input(
+                f'You entered \033[33m{watch_detail}\033[0m, '
+                'is this correct?: (y/n)'
+            )
+            requested = 'Please enter y or n'
+            if validate(user_confirm.lower(), ['y','n'], requested):
+                if user_confirm == 'y':
+                    return watch_detail
+
+
+def add_watch():
+    """
+    Adds a watch to either the collection or wishlist.
+    User is asked which list to add to first with validation.
+    Then user is asked to input details for Make, Model and Movement types.
+    Make and Model are user validated and Movement is validated automaticallly.
+    When all details are validated the watch is added to the relevant sheet.
+    """
+    # Getting list to update
+    print('Please choose which list to add to:\n')
+    print('1 - Collection')
+    print('2 - Wishlist\n')
+
+    while True:
+        list_selection = input('Please enter 1 or 2:\n')
+        requested = 'Please enter 1 or 2'
+        if validate(list_selection, ['1','2'], requested):
+            break
+    
+    if list_selection == '1':
+        print('Adding watch to current Collection:\n')
+        sheet_to_update = 'owned'
+    else:
+        print('Adding watch to wishlist:\n')
+        sheet_to_update = 'wishlist'
+
+    # Getting watch details
+    watch_make = get_watch_detail('make', False)
+    watch_model = get_watch_detail('model', False)
+    watch_movement = get_watch_detail('movement', True)
+
+    print(f'Watch make: {watch_make}')
+    print(f'Watch model: {watch_model}')
+    print(f'Watch movement: {watch_movement}')
+    
+
 
 
 def main():
