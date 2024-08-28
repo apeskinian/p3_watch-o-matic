@@ -115,6 +115,12 @@ def view_selection(sheet_choice):
     continue_app()
 
 def get_watch_detail(detail, is_movement):
+    """
+    Get user inputs for adding a new watch which includes:
+    1 - Make of watch (string input validated by user)
+    2 - Model of watch (string input validated by user)
+    3 - Movement of watch (options with input validated by app)
+    """
     if is_movement:
         print('Please select the movement:\n')
         print('1 - Quartz')
@@ -153,9 +159,8 @@ def add_watch():
     """
     Adds a watch to either the collection or wishlist.
     User is asked which list to add to first with validation.
-    Then user is asked to input details for Make, Model and Movement types.
-    Make and Model are user validated and Movement is validated automaticallly.
-    When all details are validated the watch is added to the relevant sheet.
+    Then watch details are retrieved from get_watch function calls.
+    Returned watch details are then presented to user for confirmation.
     """
     # Getting list to update
     print('Please choose which list to add to:\n')
