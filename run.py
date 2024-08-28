@@ -30,12 +30,12 @@ def validate(user_input, check, request):
     Checks if users choice is within valid menu options.
     """
     try:
-        if user_input not in check:
+        if user_input.lower() not in check:
             raise ValueError(
-                f"{request}. You entered {user_input}"
+                f"\033[31m{user_input}\033[0m entered. {request}"
             )
     except ValueError as e:
-        print(f"Invalid choice: {e}, please try again.\n")
+        print(f"\nInvalid choice: {e}.\n")
         return False
     clear()
     return True
@@ -83,13 +83,13 @@ def continue_app():
     while True:
         continue_check = input('Would you like to do anything else? (y/n):\n')
         requested = 'Please enter y or n'
-        if validate(continue_check.lower(), ['y','n'], requested):
+        if validate(continue_check, ['y','n'], requested):
             break
 
     if continue_check.lower() == 'y':
         menu()
     else:
-        print('Thank you for using Watch-o-Matic the app will now close...')
+        print('Thank you for using Watch-o-Matic. The app will now close...')
         time.sleep(3)
 
 def view_selection(sheet_choice,collection):
