@@ -113,7 +113,8 @@ def show_table(table, pages, sheet):
         page_count += 1
         start_row = page_count * 10
         end_row = start_row + 10
-        print(f'Page {page_count}/{pages}\n')
+        if pages != 1:
+            print(f'Page {page_count}/{pages}\n')
         if page_count == pages:
             break
         next_page = getpass.getpass('Press ENTER to continue:')
