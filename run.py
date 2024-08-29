@@ -100,11 +100,13 @@ def continue_app():
         print('Thank you for using Watch-o-Matic. The app will now close...')
 
 
-def show_table(table, pages):
+def show_table(table, pages, sheet):
+    table._min_width = {"Make" : 15, "Model" : 15, "Movement" : 10}
     page_count = 0
     start_row = 0
     end_row = 10
     while page_count < pages:
+        print(f'Here are the current watches in your {sheet}:\n')
         print(
             table.get_string(start=start_row, end=end_row, sortby="Make"),'\n'
         )
@@ -132,10 +134,8 @@ def view_selection(sheet_choice):
         watch_table.add_row(watch_data[row])
 
     num_pages=math.ceil((len(watch_data)-1)/10)
-
-    print(f'Here are the current watches in your {sheet_choice}:\n')
-    show_table(watch_table, num_pages)
-    #print(watch_table.get_string(sortby="Make"),'\n')
+    
+    show_table(watch_table, num_pages, sheet_choice)
 
     continue_app()
 
