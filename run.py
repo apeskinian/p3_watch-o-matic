@@ -18,14 +18,14 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('watch-o-matic')
 
-# COLOURS FOR TEXT HIGHLIGHTING
+# Colours for text highlighting.
 ERROR_COLOUR = '\033[31m'  # Red
 CHOICE_COLOUR = '\033[32m'  # Green
 CHECK_COLOUR = '\033[33m'  # Yellow
 CLEAR = '\033[39m'  # Clear
 
 
-# Defining the watch class
+# Defining the watch class.
 class Watch:
     """
     A watch object which is passed when adding a new watch to either the
