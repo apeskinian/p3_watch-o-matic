@@ -6,9 +6,6 @@ import os
 import time
 import getpass
 import math
-import colorama
-from colorama import Fore
-colorama.init()
 
 # Defining constants for accessing google sheet data.
 SCOPE = [
@@ -20,6 +17,12 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('watch-o-matic')
+
+# COLOURS FOR TEXT HIGHLIGHTING
+RED = '\033[31m'
+GREEN = '\033[32m'
+YELLOW = '\033[33m'
+CLEAR = '\033[39m'
 
 
 # Defining the watch class
@@ -63,7 +66,7 @@ def validate(user_input, check, request):
     try:
         if user_input.lower() not in check:
             raise ValueError(
-                Fore.RED+f'{user_input}'+Fore.RESET+f' entered. {request}'
+                f'{RED}{user_input}{CLEAR} entered. {request}'
             )
     except ValueError as e:
         print(f"\nInvalid choice: {e}.\n")
@@ -88,9 +91,9 @@ def start_over():
     time.sleep(0.2)
     while True:
         start_over_check = input(
-            'Please enter \033[32m1\033[0m, '
-            '\033[32m2\033[0m or '
-            '\033[32m3\033[0m:\n'
+            f'Please enter {GREEN}1{CLEAR}, '
+            f'{GREEN}2{CLEAR} or '
+            f'{GREEN}3{CLEAR}:\n'
         )
         requested = 'Please enter 1, 2 or 3'
         if validate(start_over_check, ['1', '2', '3'], requested):
