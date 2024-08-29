@@ -186,6 +186,7 @@ def add_watch():
     watch_make = get_watch_detail('make', False)
     watch_model = get_watch_detail('model', False)
     watch_movement = get_watch_detail('movement', True)
+    total_length = (len(watch_make)+len(watch_model)+len(watch_movement))
 
     print(
         f'Watch-o-Matic will add the following to your {sheet_to_update}:\n')
@@ -194,6 +195,13 @@ def add_watch():
     print(f'Movement: \033[33m{watch_movement}\033[0m\n')
     
     while True:
+        if int(total_length) > 70:
+            print(
+                '\033[31mWARNING!\n\n'
+                'Total character amount for these watch details\n'
+                'will produce a glitch when viewing the table.\n\n'
+                'Data will be saved correctly to the sytem.\033[0m\n'
+            )
         final_confirm = input(
             'Enter \033[32my\033[0m to accept or \033[32mn\033[0m to cancel:\n'
         )
