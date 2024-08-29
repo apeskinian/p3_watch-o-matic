@@ -4,6 +4,9 @@ from google.oauth2.service_account import Credentials
 from prettytable import PrettyTable
 import os
 import time
+import getpass
+import math
+
 
 # Defining constants for accessing google sheet data.
 SCOPE = [
@@ -96,6 +99,25 @@ def continue_app():
     elif continue_check.lower() == 'n':
         print('Thank you for using Watch-o-Matic. The app will now close...')
 
+
+def show_table(table, pages):
+    page_count = 0
+    start_row = 0
+    end_row = 10
+    while page_count < pages:
+        print(
+            table.get_string(start=start_row, end=end_row, sortby="Make"),'\n'
+        )
+        page_count += 1
+        start_row = page_count * 10
+        end_row = start_row + 10
+        print(f'Page {page_count}/{pages}\n')
+        if page_count == pages:
+            break
+        next_page = getpass.getpass('Press ENTER to continue:')
+        clear()
+
+
 def view_selection(sheet_choice):
     """
     Displays either current watch collection or wishlist
@@ -109,8 +131,11 @@ def view_selection(sheet_choice):
     for row in range(1,len(watch_data)):
         watch_table.add_row(watch_data[row])
 
+    num_pages=math.ceil((len(watch_data)-1)/10)
+
     print(f'Here are the current watches in your {sheet_choice}:\n')
-    print(watch_table.get_string(sortby="Make"),'\n')
+    show_table(watch_table, num_pages)
+    #print(watch_table.get_string(sortby="Make"),'\n')
 
     continue_app()
 
