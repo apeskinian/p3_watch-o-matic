@@ -19,10 +19,10 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('watch-o-matic')
 
 # COLOURS FOR TEXT HIGHLIGHTING
-RED = '\033[31m'
-GREEN = '\033[32m'
-YELLOW = '\033[33m'
-CLEAR = '\033[39m'
+ERROR_COLOUR = '\033[31m'  # Red
+CHOICE_COLOUR = '\033[32m'  # Green
+CHECK_COLOUR = '\033[33m'  # Yellow
+CLEAR = '\033[39m'  # Clear
 
 
 # Defining the watch class
@@ -66,7 +66,7 @@ def validate(user_input, check, request):
     try:
         if user_input.lower() not in check:
             raise ValueError(
-                f'{RED}{user_input}{CLEAR} entered. {request}'
+                f'{ERROR_COLOUR}{user_input}{CLEAR} entered. {request}'
             )
     except ValueError as e:
         print(f"\nInvalid choice: {e}.\n")
@@ -91,9 +91,9 @@ def start_over():
     time.sleep(0.2)
     while True:
         start_over_check = input(
-            f'Please enter {GREEN}1{CLEAR}, '
-            f'{GREEN}2{CLEAR} or '
-            f'{GREEN}3{CLEAR}:\n'
+            f'Please enter {CHOICE_COLOUR}1{CLEAR}, '
+            f'{CHOICE_COLOUR}2{CLEAR} or '
+            f'{CHOICE_COLOUR}3{CLEAR}:\n'
         )
         requested = 'Please enter 1, 2 or 3'
         if validate(start_over_check, ['1', '2', '3'], requested):
@@ -132,8 +132,8 @@ def get_watch_detail(detail, is_movement):
         time.sleep(0.2)
         while True:
             movement_choice = input(
-                'Please enter \033[32m1\033[0m, '
-                '\033[32m2\033[0m or \033[32m3\033[0m\n'
+                f'Please enter {CHOICE_COLOUR}1{CLEAR}, '
+                f'{CHOICE_COLOUR}2{CLEAR} or {CHOICE_COLOUR}3{CLEAR}\n'
             )
             requested = 'Please enter 1, 2 or 3'
             if validate(movement_choice, ['1', '2', '3'], requested):
@@ -150,8 +150,9 @@ def get_watch_detail(detail, is_movement):
             while True:
                 # Get user to validate their own input.
                 user_confirm = input(
-                    f'\nYou entered \033[33m{watch_detail}\033[0m, '
-                    'is this correct?: (\033[32my\033[0m/\033[32mn\033[0m)'
+                    f'\nYou entered {CHECK_COLOUR}{watch_detail}{CLEAR}, '
+                    f'is this correct? ({CHOICE_COLOUR}y{CLEAR}/'
+                    f'{CHOICE_COLOUR}n{CLEAR}):\n'
                 )
                 requested = 'Please enter y or n'
                 if validate(user_confirm, ['y', 'n'], requested):
@@ -178,7 +179,8 @@ def add_watch():
 
     while True:
         list_selection = input(
-            'Please enter \033[32m1\033[0m or \033[32m2\033[0m:\n'
+            f'Please enter {CHOICE_COLOUR}1{CLEAR} or '
+            f'{CHOICE_COLOUR}2{CLEAR}:\n'
         )
         requested = 'Please enter 1 or 2'
         if validate(list_selection, ['1', '2'], requested):
@@ -207,21 +209,22 @@ def add_watch():
     # Presenting the proposed watch addition to the user.
     print(
         f'Watch-o-Matic will add the following to your {new_watch.sheet}:\n')
-    print(f'Make:     \033[33m{new_watch.make}\033[0m')
-    print(f'Model:    \033[33m{new_watch.model}\033[0m')
-    print(f'Movement: \033[33m{new_watch.movement}\033[0m\n')
+    print(f'Make:     {CHECK_COLOUR}{new_watch.make}{CLEAR}')
+    print(f'Model:    {CHECK_COLOUR}{new_watch.model}{CLEAR}')
+    print(f'Movement: {CHECK_COLOUR}{new_watch.movement}{CLEAR}\n')
 
     # Asking user for confirmation to add new watch to selected list.
     while True:
         if int(total_length) > 70:
             print(
-                '\033[31mWARNING!\n\n'
+                f'{ERROR_COLOUR}WARNING!\n\n'
                 'Total character amount for these watch details\n'
                 'will produce a glitch when viewing the table.\n\n'
-                'Data will be saved correctly to the sytem.\033[0m\n'
+                f'Data will be saved correctly to the sytem.{CLEAR}\n'
             )
         final_confirm = input(
-            'Enter \033[32my\033[0m to accept or \033[32mn\033[0m to cancel:\n'
+            f'Enter {CHOICE_COLOUR}y{CLEAR} to accept or '
+            f'{CHOICE_COLOUR}n{CLEAR} to cancel:\n'
         )
         requested = 'Please enter y to accept or n to cancel'
         # If users accepts, new watch data is saved to the google sheet.
@@ -243,7 +246,7 @@ def continue_app():
     while True:
         continue_check = input(
             'Would you like to do anything else? '
-            '(\033[32my\033[0m/\033[32mn\033[0m):\n'
+            f'({CHOICE_COLOUR}y{CLEAR}/{CHOICE_COLOUR}n{CLEAR}):\n'
         )
         requested = 'Please enter y or n'
         if validate(continue_check, ['y', 'n'], requested):
@@ -326,9 +329,9 @@ def get_choice():
     time.sleep(0.2)
     while True:
         choice = input(
-            'Please enter \033[32m1\033[0m,'
-            ' \033[32m2\033[0m, '
-            'or \033[32m3\033[0m:\n'
+            f'Please enter {CHOICE_COLOUR}1{CLEAR}, '
+            f'{CHOICE_COLOUR}2{CLEAR}, '
+            f'or {CHOICE_COLOUR}3{CLEAR}:\n'
         )
         requested = 'Please enter 1, 2, or 3'
         if validate(choice, ['1', '2', '3'], requested):
