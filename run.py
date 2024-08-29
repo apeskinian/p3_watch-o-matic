@@ -20,7 +20,7 @@ SHEET = GSPREAD_CLIENT.open('watch-o-matic')
 
 
 # Defining the watch class
-class watch:
+class Watch:
     """
     A watch object which is passed when adding a new watch to either the
     current collection or the wishlist.
@@ -76,9 +76,13 @@ def start_over():
     All inputs are validated.
     """
     print('Watch addition cancelled. Would you like to:\n')
+    time.sleep(0.2)
     print('1 - Try to add the watch again.')
+    time.sleep(0.2)
     print('2 - Go back to the main menu.')
+    time.sleep(0.2)
     print('3 - Quit the Watch-o-Matic.\n')
+    time.sleep(0.2)
     while True:
         start_over_check = input(
             'Please enter \033[32m1\033[0m, '
@@ -113,9 +117,13 @@ def get_watch_detail(detail, is_movement):
     # If the detail is for the movement show the options available.
     if is_movement:
         print('Please select the movement:\n')
+        time.sleep(0.2)
         print('1 - Quartz')
+        time.sleep(0.2)
         print('2 - Manual')
+        time.sleep(0.2)
         print('3 - Automatic\n')
+        time.sleep(0.2)
         while True:
             movement_choice = input(
                 'Please enter \033[32m1\033[0m, '
@@ -156,8 +164,11 @@ def add_watch():
     """
     # Getting list to update
     print('Please choose which list to add to:\n')
+    time.sleep(0.2)
     print('1 - Collection')
+    time.sleep(0.2)
     print('2 - Wishlist\n')
+    time.sleep(0.2)
 
     while True:
         list_selection = input(
@@ -175,7 +186,7 @@ def add_watch():
         sheet_to_update = 'wishlist'
 
     # Create new watch object
-    new_watch = watch(
+    new_watch = Watch(
         get_watch_detail('make', False),
         get_watch_detail('model', False),
         get_watch_detail('movement', True),
@@ -300,13 +311,17 @@ def get_choice():
     Get menu choice from user and calls for validation.
     """
     print('What would you like do to?\n')
+    time.sleep(0.2)
     print('1 - View your current collection')
+    time.sleep(0.2)
     print('2 - View your current wishlist')
+    time.sleep(0.2)
     print('3 - Add a watch to the collection or wishlist\n')
+    time.sleep(0.2)
     while True:
         choice = input(
             'Please enter \033[32m1\033[0m,'
-            ' \033[32m2\033[0m,'
+            ' \033[32m2\033[0m, '
             'or \033[32m3\033[0m:\n'
         )
         requested = 'Please enter 1, 2, or 3'
@@ -344,4 +359,6 @@ def main():
     menu()
 
 
-main()
+if __name__ == "__main__":
+    clear()
+    main()
