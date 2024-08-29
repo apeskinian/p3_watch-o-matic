@@ -18,6 +18,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('watch-o-matic')
 
+
 # Functions for app.
 def clear():
     """
@@ -62,7 +63,7 @@ def start_over():
             '\033[32m3\033[0m:\n'
         )
         requested = 'Please enter 1, 2 or 3'
-        if validate(start_over_check, ['1','2','3'], requested):
+        if validate(start_over_check, ['1', '2', '3'], requested):
             break
 
     match start_over_check:
@@ -111,7 +112,7 @@ def get_watch_detail(detail, is_movement):
                 '\033[32m2\033[0m or \033[32m3\033[0m\n'
             )
             requested = 'Please enter 1, 2 or 3'
-            if validate(movement_choice, ['1','2','3'], requested):
+            if validate(movement_choice, ['1', '2', '3'], requested):
                 if movement_choice == '1':
                     return 'Quartz'
                 elif movement_choice == '2':
@@ -129,7 +130,7 @@ def get_watch_detail(detail, is_movement):
                     'is this correct?: (\033[32my\033[0m/\033[32mn\033[0m)'
                 )
                 requested = 'Please enter y or n'
-                if validate(user_confirm, ['y','n'], requested):
+                if validate(user_confirm, ['y', 'n'], requested):
                     if user_confirm.lower() == 'y':
                         return watch_detail.title()
                     elif user_confirm.lower() == 'n':
@@ -153,9 +154,9 @@ def add_watch():
             'Please enter \033[32m1\033[0m or \033[32m2\033[0m:\n'
         )
         requested = 'Please enter 1 or 2'
-        if validate(list_selection, ['1','2'], requested):
+        if validate(list_selection, ['1', '2'], requested):
             break
-    
+
     if list_selection == '1':
         print('Adding watch to current Collection:\n')
         sheet_to_update = 'collection'
@@ -177,7 +178,7 @@ def add_watch():
     print(f'Make:     \033[33m{watch_make}\033[0m')
     print(f'Model:    \033[33m{watch_model}\033[0m')
     print(f'Movement: \033[33m{watch_movement}\033[0m\n')
-    
+
     # Asking user for confirmation to add new watch to selected list.
     while True:
         if int(total_length) > 70:
@@ -192,7 +193,7 @@ def add_watch():
         )
         requested = 'Please enter y to accept or n to cancel'
         # If users accepts, new watch data is saved to the google sheet.
-        if validate(final_confirm, ['y','n'], requested):
+        if validate(final_confirm, ['y', 'n'], requested):
             if final_confirm.lower() == 'y':
                 push_data_to_sheet(
                     watch_make,
@@ -214,11 +215,11 @@ def continue_app():
     """
     while True:
         continue_check = input(
-            'Would you like to do anything else? ' 
+            'Would you like to do anything else? '
             '(\033[32my\033[0m/\033[32mn\033[0m):\n'
         )
         requested = 'Please enter y or n'
-        if validate(continue_check, ['y','n'], requested):
+        if validate(continue_check, ['y', 'n'], requested):
             break
 
     if continue_check.lower() == 'y':
@@ -235,7 +236,7 @@ def show_table(table, pages, sheet):
     getpass is used so that any other key entries are not seen.
     """
     # Set table min column widths
-    table._min_width = {"Make" : 15, "Model" : 15, "Movement" : 10}
+    table._min_width = {'Make': 15, 'Model': 15, 'Movement': 10}
 
     # Set initial page view variables
     page_count = 0
@@ -246,7 +247,7 @@ def show_table(table, pages, sheet):
     while page_count < pages:
         print(f'Here are the current watches in your {sheet}:\n')
         print(
-            table.get_string(start=start_row, end=end_row, sortby="Make"),'\n'
+            table.get_string(start=start_row, end=end_row, sortby="Make"), '\n'
         )
         page_count += 1
         start_row = page_count * 10
@@ -271,13 +272,13 @@ def view_selection(sheet_choice):
     watch_data = watches.get_all_values()
     watch_titles = watch_data[0]
     watch_table = PrettyTable(watch_titles)
-    for row in range(1,len(watch_data)):
+    for row in range(1, len(watch_data)):
         watch_table.add_row(watch_data[row])
 
     # Work out number pages needed.
-    num_pages=math.ceil((len(watch_data)-1)/10)
-    
-    #Send table data with page info and sheet choice to display.
+    num_pages = math.ceil((len(watch_data)-1)/10)
+
+    # Send table data with page info and sheet choice to display.
     show_table(watch_table, num_pages, sheet_choice)
 
     # Ask user if they want to continue after last page is shown.
@@ -292,14 +293,14 @@ def get_choice():
     print('1 - View your current collection')
     print('2 - View your current wishlist')
     print('3 - Add a watch to the collection or wishlist\n')
-    while True: 
+    while True:
         choice = input(
             'Please enter \033[32m1\033[0m,'
-            ' \033[32m2\033[0m,' 
+            ' \033[32m2\033[0m,'
             'or \033[32m3\033[0m:\n'
         )
         requested = 'Please enter 1, 2, or 3'
-        if validate(choice, ['1','2','3'], requested):
+        if validate(choice, ['1', '2', '3'], requested):
             break
 
     return choice
