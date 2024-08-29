@@ -6,6 +6,9 @@ import os
 import time
 import getpass
 import math
+import colorama
+from colorama import Fore
+colorama.init()
 
 # Defining constants for accessing google sheet data.
 SCOPE = [
@@ -60,7 +63,7 @@ def validate(user_input, check, request):
     try:
         if user_input.lower() not in check:
             raise ValueError(
-                f"\033[31m{user_input}\033[0m entered. {request}"
+                Fore.RED+f'{user_input}'+Fore.RESET+f' entered. {request}'
             )
     except ValueError as e:
         print(f"\nInvalid choice: {e}.\n")
