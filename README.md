@@ -1,4 +1,4 @@
-# [P3 WATCH O MATIC](https://apeskinian-watch-o-matic-8cd45839ba26.herokuapp.com)
+# Watch-o-Matic
 
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/t/apeskinian/p3_watch-o-matic)](https://github.com/apeskinian/p3_watch-o-matic/commits/main)
 [![GitHub last commit](https://img.shields.io/github/last-commit/apeskinian/p3_watch-o-matic)](https://github.com/apeskinian/p3_watch-o-matic/commits/main)

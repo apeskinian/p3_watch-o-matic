@@ -19,6 +19,29 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('watch-o-matic')
 
 
+# Defining the watch class
+class watch:
+    """
+    A watch object which is passed when adding a new watch to either the
+    current collection or the wishlist.
+    """
+    def __init__(self, make, model, movement, sheet):
+        self.make = make
+        self.model = model
+        self.movement = movement
+        self.sheet = sheet
+
+    def add_to_sheet(self):
+        print(f'Adding watch to {self.sheet}...\n')
+        worksheet = SHEET.worksheet(self.sheet)
+        worksheet.append_row([self.make, self.model, self.movement])
+        print(
+            f'New watch successfully added to {self.sheet}. '
+            f'Loading {self.sheet}...\n'
+        )
+        view_selection(self.sheet)
+
+
 # Functions for app.
 def clear():
     """
@@ -80,19 +103,6 @@ def start_over():
             print('I have a bad feeling about this...')
 
 
-def push_data_to_sheet(make, model, movement, sheet):
-    """
-    Adds new watch to the chosen google sheet.
-    Confirmation is given and respective sheet loaded to show user.
-    """
-    print(f'Adding watch to {sheet}...\n')
-    data = [make, model, movement]
-    worksheet = SHEET.worksheet(sheet)
-    worksheet.append_row(data)
-    print(f'New watch successfully added to {sheet}. Loading {sheet}...\n')
-    view_selection(sheet)
-
-
 def get_watch_detail(detail, is_movement):
     """
     Get user inputs for adding a new watch which includes:
@@ -126,13 +136,13 @@ def get_watch_detail(detail, is_movement):
             while True:
                 # Get user to validate their own input.
                 user_confirm = input(
-                    f'\nYou entered \033[33m{watch_detail.title()}\033[0m, '
+                    f'\nYou entered \033[33m{watch_detail}\033[0m, '
                     'is this correct?: (\033[32my\033[0m/\033[32mn\033[0m)'
                 )
                 requested = 'Please enter y or n'
                 if validate(user_confirm, ['y', 'n'], requested):
                     if user_confirm.lower() == 'y':
-                        return watch_detail.title()
+                        return watch_detail
                     elif user_confirm.lower() == 'n':
                         break
 
@@ -164,20 +174,25 @@ def add_watch():
         print('Adding watch to wishlist:\n')
         sheet_to_update = 'wishlist'
 
-    # Getting watch details
-    watch_make = get_watch_detail('make', False)
-    watch_model = get_watch_detail('model', False)
-    watch_movement = get_watch_detail('movement', True)
+    # Create new watch object
+    new_watch = watch(
+        get_watch_detail('make', False),
+        get_watch_detail('model', False),
+        get_watch_detail('movement', True),
+        sheet_to_update
+    )
 
     # Get total length of entered characters for warning if over 70
-    total_length = (len(watch_make)+len(watch_model)+len(watch_movement))
+    total_length = (
+        len(new_watch.make)+len(new_watch.model)+len(new_watch.movement)
+    )
 
     # Presenting the proposed watch addition to the user.
     print(
-        f'Watch-o-Matic will add the following to your {sheet_to_update}:\n')
-    print(f'Make:     \033[33m{watch_make}\033[0m')
-    print(f'Model:    \033[33m{watch_model}\033[0m')
-    print(f'Movement: \033[33m{watch_movement}\033[0m\n')
+        f'Watch-o-Matic will add the following to your {new_watch.sheet}:\n')
+    print(f'Make:     \033[33m{new_watch.make}\033[0m')
+    print(f'Model:    \033[33m{new_watch.model}\033[0m')
+    print(f'Movement: \033[33m{new_watch.movement}\033[0m\n')
 
     # Asking user for confirmation to add new watch to selected list.
     while True:
@@ -195,12 +210,7 @@ def add_watch():
         # If users accepts, new watch data is saved to the google sheet.
         if validate(final_confirm, ['y', 'n'], requested):
             if final_confirm.lower() == 'y':
-                push_data_to_sheet(
-                    watch_make,
-                    watch_model,
-                    watch_movement,
-                    sheet_to_update
-                )
+                new_watch.add_to_sheet()
                 break
             # User does not accept so is given options.
             elif final_confirm.lower() == 'n':
