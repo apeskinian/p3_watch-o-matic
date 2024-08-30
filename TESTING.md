@@ -17,10 +17,10 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 | Browser | Home | Notes |
 | --- | --- | --- |
-| Chrome | ![screenshot](documentation/browsers/wom_browsers_chrome.png) | Works as expected |
-| Firefox | ![screenshot](documentation/browsers/wom_browsers_firefox.png) | Works as expected |
-| Edge | ![screenshot](documentation/browsers/wom_browsers_edge.png) | Works as expected |
-| Safari | ![screenshot](documentation/browsers/wom_browsers_safari.png) | Works as expected |
+| Chrome | ![screenshot](documentation/browsers/wom_browsers_chrome.png "Chrome compatibility") | Works as expected |
+| Firefox | ![screenshot](documentation/browsers/wom_browsers_firefox.png "Firefox compatibility") | Works as expected |
+| Edge | ![screenshot](documentation/browsers/wom_browsers_edge.png "Edge compatibility") | Works as expected |
+| Safari | ![screenshot](documentation/browsers/wom_browsers_safari.png "Safari compatibility") | Works as expected |
 
 ## Responsiveness
 
@@ -28,13 +28,13 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 
 | Device | Home | Notes |
 | --- | --- | --- |
-| Mobile (DevTools) | ![screenshot](documentation/responsive/wom_responsive_devtools_mobile.png) | Works as expected |
-| Tablet (DevTools) | ![screenshot](documentation/responsive/wom_responsive_devtools_tablet.png) | Works as expected |
-| 4K Monitor (DevTools)| ![screenshot](documentation/responsive/wom_responsive_devtools_4kmonitor.png) | Noticeable scaling issues |
-| iPhone 15 Pro | ![screenshot](documentation/responsive/wom_responsive_iphone15pro.png) | Does not resize to fit width and keyboard does not input |
-| iPad Mini | ![screenshot](documentation/responsive/wom_responsive_ipadmini.png) | Does not resize to fit width and keyboard does not input |
-| MacBook Air M3 | ![screenshot](documentation/responsive/wom_responsive_macbookairm3.png) | Works as expected |
-| 2K Desktop Monitor | ![screenshot](documentation/responsive/wom_responsive_2kdesktop.png) | Works as expected |
+| Mobile (DevTools) | ![screenshot](documentation/responsive/wom_responsive_devtools_mobile.png "Responsive test Mobile DevTools") | Works as expected |
+| Tablet (DevTools) | ![screenshot](documentation/responsive/wom_responsive_devtools_tablet.png "Responsive test Tablet DevTools") | Works as expected |
+| 4K Monitor (DevTools)| ![screenshot](documentation/responsive/wom_responsive_devtools_4kmonitor.png "Responsive test 4K DevTools") | Noticeable scaling issues |
+| iPhone 15 Pro | ![screenshot](documentation/responsive/wom_responsive_iphone15pro.png "Responsive test iPhone 15 Pro") | Does not resize to fit width and keyboard does not input |
+| iPad Mini | ![screenshot](documentation/responsive/wom_responsive_ipadmini.png "Responsive test iPad Mini") | Does not resize to fit width and keyboard does not input |
+| MacBook Air M3 | ![screenshot](documentation/responsive/wom_responsive_macbookairm3.png "Responsive test Macbook Air M3") | Works as expected |
+| 2K Desktop Monitor | ![screenshot](documentation/responsive/wom_responsive_2kdesktop.png "Responsive test 2K Desktop Monitor") | Works as expected |
 
 ## Lighthouse Audit
 
@@ -42,7 +42,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 | Page | Mobile | Desktop | Notes |
 | --- | --- | --- | --- |
-| Main | ![screenshot](documentation/lighthouse/wom_lighthouse_mobile.png) | ![screenshot](documentation/lighthouse/wom_lighthouse_desktop.png) | Some minor warnings |
+| Main | ![screenshot](documentation/lighthouse/wom_lighthouse_mobile.png "Lighthouse mobile") | ![screenshot](documentation/lighthouse/wom_lighthouse_desktop.png "Lighthouse desktop") | Some minor warnings |
 
 ## Defensive Programming
 
