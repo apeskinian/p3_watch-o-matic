@@ -64,12 +64,16 @@ def validate(user_input, check, request):
     Repeats until valid input is given.
     """
     try:
-        if user_input.lower() not in check:
+        if user_input.lower() == '':
+            raise ValueError(
+                f'no input was given. {request}'
+            )
+        elif user_input.lower() not in check:
             raise ValueError(
                 f'{ERROR_COLOUR}{user_input}{CLEAR} entered. {request}'
             )
     except ValueError as e:
-        print(f"\nInvalid choice: {e}.\n")
+        print(f'\nInvalid input: {e}.\n')
         return False
     clear()
     return True

@@ -35,48 +35,76 @@ In this section, you will briefly explain your design processes.
 
 ## Features
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
+- ### Main Menu
+  This is where the user is greeted and given the options for what they can do in the app. View their current collection, view their wishlist or add a watch to one of the lists. The user is prompted for a choice which is then validated to make sure one of the options was entered and then taken to their choice action.
 
-In this section, you should go over the different parts of your project,
-and describe each in a sentence or so.
+  ![Features - Main Menu](documentation/features/wom_feature_main_menu.png "Main Menu")
 
-You will need to explain what value each of the features provides for the user,
-focusing on who this website is for, what it is that they want to achieve,
-and how your project is the best way to help them achieve these things.
+- ### Viewing current collection
+  The user is shown their current collection in a table which is ordered alphabetically. This is paginated if the collection has more than 10 watches. Each page is shown as a number out of the total with a prompt to press ENTER to see the next page. When the last page is being shown or there is only one page the option to continue and perform another action is given. If y is entered the user is taked back to the main menu. If n is chosen the app gives a thank you message and ends.
 
-For some/all of your features, you may choose to reference the specific project files that implement them.
+  ![Features - View Collection](documentation/features/wom_feature_collection_01.png "Viewing Collection 1")
+  ![Features - View Collection](documentation/features/wom_feature_collection_02.png "Viewing Collection 2")
+  ![Features - Add watch](documentation/features/wom_feature_close.png "App closing")
 
-IMPORTANT: Remember to always include a screenshot of each individual feature!
+- ### Viewing wishlist
+  The user is shown their watch wishlist in a table which is ordered alphabetically. This is paginated if the wishlist has more than 10 watches. Each page is shown as a number out of the total with a prompt to press ENTER to see the next page. When the last page is being shown or there is only one page the option to continue and perform another action is given. If y is entered the user is taked back to the main menu. If n is chosen the app gives a thank you message and ends.
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+  ![Features - View Collection](documentation/features/wom_feature_wishlist.png "Viewing Wishlist")
+  ![Features - Add watch](documentation/features/wom_feature_close.png "App closing")
 
-### Existing Features
+- ### Adding a watch to either the collection or wishlist
+  The user can add a new watch to their collection or their wishlist. They are prompted to choose which option they want which is validated. They can add a watch to their chosen list by entering the required details in the following steps:
 
-- **YOUR-TITLE-FOR-FEATURE-#1**
+  1. User is prompted to enter the make of the watch, this is then double checked with the user who can confirm and move on to the next step or go back and re enter the detail.
+  2. User is prompted to enter the model of the watch, this is then double checked with the user who can confirm and move on to the next step or go back and re enter the detail.
+  3. User is prompted to choose the movement of the watch from three options:
+     - Quartz
+     - Manual
+     - Automatic
+  
+     When a valid option is given the user is taken to the next step.
+  4. The user is presented with an overview of the watch to be added. They now have two options:
+     - Confirm the addition: this will add the watch details to the google sheet and show them the updated collection or wishlist.
+     - Cancel the addition: this will them give them the option to start again, go back to the main menu or quit the app.
+  
+  | Step | Screenshot |
+  | --- | --- |
+  | Choosing which list to add to: | ![Features - Add watch](documentation/features/wom_feature_add_menu.png "Add a new watch option") |
+  | Prompt user for watch make: | ![Features - Add watch](documentation/features/wom_feature_add_collection_make_prompt.png "Prompt for make of watch") |
+  | User confirmation of make: | ![Features - Add watch](documentation/features/wom_feature_add_collection_make_confirm.png "Confirm make of watch") |
+  | Prompt user for watch model: | ![Features - Add watch](documentation/features/wom_feature_add_collection_model_prompt.png "Prompt for model of watch") |
+  | User confirmation of model: | ![Features - Add watch](documentation/features/wom_feature_add_collection_model_confirm.png "Confirm model of watch") |
+  | Prompt user for movement choice: | ![Features - Add watch](documentation/features/wom_feature_add_movement_prompt.png "Choosing watch movement") |
+  | Overview of proposed new addition: | ![Features - Add watch](documentation/features/wom_feature_add_collection_final_prompt.png "Overview confirmation") |
+  | Confirmation of addition to collection: | ![Features - Add watch](documentation/features/wom_feature_add_collection_show.png "Showing updated collection") |
+  | Confirmation of addition to wishlist: | ![Features - Add watch](documentation/features/wom_feature_add_wishlist_show.png "Showing updated wishlist") |
+  | Options given when addition is cancelled: | ![Features - Add watch](documentation/features/wom_feature_add_cancelled.png "Addition cancelled menu") |
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+- ### User input validation
+  Everytime the user is asked for input it is validated against preset acceptable parameters for each questions. When the app is given an invalid response it will alert the user and show them what they entered highlighted in red. It will then prompt them to try again reminding them of the options that are expected. This will repeat until a valid answer is given.
 
-![screenshot](documentation/features/feature01.png)
+  | Invalid numeric entry | Invalid alphanumeric entry |
+  | --- | --- |
+  | ![Features - validation](documentation/features/wom_feature_validation_mm_num.png "Invalid numeric") | ![Features - validation](documentation/features/wom_feature_validation_mm_alpha.png "Invalid alphanumeric") |
+  | ![Features - validation](documentation/features/wom_feature_validation_viewcoll_num.png "Invalid numeric") | ![Features - validation](documentation/features/wom_feature_validation_viewcoll_alpha.png "Invalid alphanumeric") |
+  | ![Features - validation](documentation/features/wom_feature_validation_viewwish_num.png "Invalid numeric") | ![Features - validation](documentation/features/wom_feature_validation_viewwish_alpha.png "Invalid alphanumeric") |
+  | ![Features - validation](documentation/features/wom_feature_validation_addmenu_num.png "Invalid numeric") | ![Features - validation](documentation/features/wom_feature_validation_addmenu_alpha.png "Invalid alphanumeric") |
+  | ![Features - validation](documentation/features/wom_feature_validation_movement_num.png "Invalid numeric") | ![Features - validation](documentation/features/wom_feature_validation_movement_alpha.png "Invalid alphanumeric") |
+  | ![Features - validation](documentation/features/wom_feature_validation_overview_num.png "Invalid numeric") | ![Features - validation](documentation/features/wom_feature_validation_overview_alpha.png "Invalid alphanumeric") |
+  | ![Features - validation](documentation/features/wom_feature_validation_cancel_num.png "Invalid numeric") | ![Features - validation](documentation/features/wom_feature_validation_cancel_alpha.png "Invalid alphanumeric") |
+  | ![Features - validation](documentation/features/wom_feature_validation_confirmmake_num.png "Invalid numeric") | ![Features - validation](documentation/features/wom_feature_validation_confirmmake_alpha.png "Invalid alphanumeric") |
+  | ![Features - validation](documentation/features/wom_feature_validation_confirmmodel_num.png "Invalid numeric") | ![Features - validation](documentation/features/wom_feature_validation_confirmmodel_alpha.png "Invalid alphanumeric") |
 
-- **YOUR-TITLE-FOR-FEATURE-#2**
+  If the user does not input anything and presses enter they are informed this and asked to try again.
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+  
+  
+  The only exception to this validation is when entering make and model details for a new watch. As there are virtually endless possibilities for watch makes and names the user is prompted to validate their own input. They have two chances to validate, once when they enter each detail and again before the watch is added.
 
-![screenshot](documentation/features/feature02.png)
+  ![Feature - user validation](documentation/features/wom_feature_add_wishlist_make_confirm.png "User detail self validation")
+  ![Feature - user validation](documentation/features/wom_feature_add_wishlist_final_prompt.png "User overview self validation")
 
-- **YOUR-TITLE-FOR-FEATURE-#3**
-
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
-
-![screenshot](documentation/features/feature03.png)
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-Repeat as necessary for as many features as your site contains.
-
-Hint: the more, the merrier!
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ### Future Features
 
