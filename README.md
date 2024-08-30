@@ -136,42 +136,6 @@ Below is the flowchart of the main process of this Python program. It shows the 
 
 ![screenshot](documentation/lucid/wom_lucid.png)
 
-```mermaid
-graph TD
-    A[Watch-o-Matic] --> B[Main Menu]
-    B --> C{User menu choice}
-    C -->|View Collection| D[Validation]
-    C -->|View Wishlist| E[Validation]
-    C -->|Add Watch| F[Validation]
-    
-    D --> G[Display Chosen Sheet]
-    E --> G[Display Chosen Sheet]
-    
-    G --> H[Collection or Wishlist displayed]
-    H -->|Yes| I{Continue?}
-    I -->|Yes| J[Gather Details]
-    I -->|No| K[END]
-    
-    J --> L{Choose sheet to add to}
-    L -->|Collection| M[Validation]
-    L -->|Wishlist| N[Validation]
-    
-    J --> O[Gather Details] --> P{Make}
-    P --> Q[User Validation]
-    J --> O[Gather Details] --> R{Model}
-    R --> S[User Validation]
-    
-    P --> T[Create Watch Object]
-    R --> T
-    
-    T --> U{Movement Choice}
-    U -->|Manual| V[Validation]
-    U -->|Quartz| W[Validation]
-    U -->|Automatic| X[Validation]
-    
-    X --> Y[Add watch to spreadsheet and display] --> G
-```
-
 ### Classes & Functions
 
 The program uses classes as a blueprint for the project's objects (OOP). This allows for the object to be reusable.
