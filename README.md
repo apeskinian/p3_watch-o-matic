@@ -118,7 +118,6 @@ Source: [Techsini Multi Device Website Mockup Generator](http://techsini.com/mul
 - [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://tim.2bn.dev/markdown-builder) used to generate README and TESTING templates.
 - [![Git](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
 - [![GitHub](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) used for secure online code storage.
-- ⚠️⚠️ IDE: CHOOSE ONLY ONE <-- delete me ⚠️⚠️
 - [![Gitpod](https://img.shields.io/badge/Gitpod-grey?logo=gitpod&logoColor=FFAE33)](https://gitpod.io) used as a cloud-based IDE for development.
 - [![Python](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) used as the back-end programming language.
 - [![Heroku](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) used for hosting the deployed back-end site.
@@ -136,6 +135,42 @@ and mapped out before coding began using a free version of
 Below is the flowchart of the main process of this Python program. It shows the entire cycle of the program.
 
 ![screenshot](documentation/lucid/wom_lucid.png)
+
+```mermaid
+graph TD
+    A[Watch-o-Matic] --> B[Main Menu]
+    B --> C{User menu choice}
+    C -->|View Collection| D[Validation]
+    C -->|View Wishlist| E[Validation]
+    C -->|Add Watch| F[Validation]
+    
+    D --> G[Display Chosen Sheet]
+    E --> G[Display Chosen Sheet]
+    
+    G --> H[Collection or Wishlist displayed]
+    H -->|Yes| I{Continue?}
+    I -->|Yes| J[Gather Details]
+    I -->|No| K[END]
+    
+    J --> L{Choose sheet to add to}
+    L -->|Collection| M[Validation]
+    L -->|Wishlist| N[Validation]
+    
+    J --> O[Gather Details] --> P{Make}
+    P --> Q[User Validation]
+    J --> O[Gather Details] --> R{Model}
+    R --> S[User Validation]
+    
+    P --> T[Create Watch Object]
+    R --> T
+    
+    T --> U{Movement Choice}
+    U -->|Manual| V[Validation]
+    U -->|Quartz| W[Validation]
+    U -->|Automatic| X[Validation]
+    
+    X --> Y[Add watch to spreadsheet and display] --> G
+```
 
 ### Classes & Functions
 
