@@ -9,9 +9,9 @@
 
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
-| Directory | File | CI URL | Screenshot | Notes |
-| --- | --- | --- | --- | --- |
-|  | run.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/apeskinian/p3_watch-o-matic/main/run.py) | ![screenshot](documentation/validation/WOM_PEP8.png "PEP8 Python Validation") | |
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| run.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/apeskinian/p3_watch-o-matic/main/run.py) | ![screenshot](documentation/validation/wom_pep8.png "PEP8 Python Validation") | |
 
 ## Browser Compatibility
 
