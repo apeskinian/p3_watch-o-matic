@@ -149,6 +149,72 @@ Below is the flowchart of the main process of this Python program. It shows the 
 
 ![screenshot](documentation/lucid/wom_lucid.png)
 
+```mermaid
+---
+config:
+  theme: default
+  look: classic
+---
+
+flowchart TD
+    n1(["Watch-o-Matic"]) --> n3{"Main Menu"}
+    n3 -- User selection --> n4("Validation<br>")
+    n8[("Google Sheet")] <--> n7("Get table data from chosen sheet")
+    n7 --> n9("Display Table of Collection or Wishlist")
+    n9 --> n10{"Do something else?"}
+    n4 -- Add watch --> n12("Gather details for new watch")
+    n4 -- View Collection --> n7
+    n4 -- View wishlist --> n7
+    n13{"Add to Collection or Wishlist?"} -- User selection --> n15("Validation")
+    n17("User Validation") --> n12
+    n18("User Validation") --> n12
+    n19("Watch make") -- User input --> n17
+    n20("Watch model") -- User input --> n18
+    n21("Validation") -- Manual --> n12
+    n24{"Movement Choice"} -- User selection --> n21
+    n16("Create new watch object from class") --> n25{"Confirm new watch"}
+    n12 --> n16
+    n15 -- Wishlist --> n12
+    n15 -- Collection --> n12
+    n10 -- User selection --> n29("Validation")
+    n29 -- No --> n11("App Finishes")
+    n29 -- Yes --> n3
+    n21 -- Automatic --> n12
+    n21 -- Quartz --> n12
+    n25 -- User selection --> n31("Validation")
+    n30("Add new watch to google sheet and display updated table") --> n7 & n8
+    n31 -- Yes --> n30
+    n31 -- No --> n32{"Cancel options"}
+    n32 -- User selection --> n33("Validation")
+    n33 -- Quit --> n11
+    n33 -- Start Over --> n12
+    n33 -- Return to main menu --> n3
+    style n1 fill:#FFE0B2
+    style n3 fill:#C8E6C9
+    style n4 fill:#FFD600
+    style n8 fill:#FFCDD2
+    style n7 fill:#BBDEFB
+    style n9 fill:#BBDEFB
+    style n10 fill:#C8E6C9
+    style n12 fill:#BBDEFB
+    style n13 fill:#C8E6C9
+    style n15 fill:#FFD600
+    style n17 fill:#FFD600
+    style n18 fill:#FFD600
+    style n19 fill:#E1BEE7
+    style n20 fill:#E1BEE7
+    style n21 fill:#FFD600
+    style n24 fill:#C8E6C9
+    style n16 fill:#BBDEFB
+    style n25 fill:#C8E6C9
+    style n29 fill:#FFD600
+    style n11 fill:#FFE0B2
+    style n31 fill:#FFD600
+    style n30 fill:#BBDEFB
+    style n32 fill:#C8E6C9
+    style n33 fill:#FFD600
+```
+
 ### Classes & Functions
 
 The program uses classes as a blueprint for the project's objects (OOP). This allows for the object to be reusable.
