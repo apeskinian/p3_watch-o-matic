@@ -135,7 +135,8 @@ I used a flowchart to map out the apps logic and proceeded to code it from there
 - [![Python](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) used as the back-end programming language.
 - [![Heroku](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) used for hosting the deployed back-end site.
 - [![Google Sheets](https://img.shields.io/badge/Google_Sheets-grey?logo=googlesheets&logoColor=34A853)](https://docs.google.com/spreadsheets) used for storing data from my Python app.
-- [![Lucid](https://img.shields.io/badge/Lucidchart-grey?logo=lucid&logoColor=FF9E0F)](https://www.lucidchart.com/pages) used for creating the flowchart for the apps logic.
+- [![Lucid](https://img.shields.io/badge/Lucidchart-grey?logo=lucid&logoColor=FF9E0F)](https://www.lucidchart.com/pages) used for creating a flowchart for the apps logic.
+- [![Mermaid](https://img.shields.io/badge/Mermaid-grey?logo=mermaid&logoColor=FF3670)](https://www.mermaidchart.com/) used for creating a flowchart for the apps logic.
 
 ## Data Model
 
@@ -148,6 +149,12 @@ and mapped out before coding began using a free version of
 Below is the flowchart of the main process of this Python program. It shows the entire cycle of the program.
 
 ![screenshot](documentation/lucid/wom_lucid.png)
+
+To follow best practice, a flowchart was created for the app's logic,
+and mapped out before coding began using a free version of
+[Mermaid](https://www.mermaidchart.com/)
+
+Below is the flowchart of the main process of this Python program. It shows the entire cycle of the program.
 
 ```mermaid
 ---
@@ -400,6 +407,7 @@ There are no differences between the local and deployed version of the site.
 | [PrettyTable PyPI](https://pypi.org/project/prettytable/) | Python Code | Displaying data in a neat table |
 | [Python match/case](https://stackoverflow.com/questions/11479816/what-is-the-python-equivalent-for-a-case-switch-statement) | Python Code | Using match/case in Python |
 | [Colouring Text in terminal](https://gist.github.com/kamito/704813) | PP3 Terminal | Using colour codes to style the text in the terminal |
+| [Mermaid Chart](https://www.mermaidchart.com/) | README | Flowchart creation |
 
 ### Media
 
