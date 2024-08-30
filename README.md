@@ -60,6 +60,7 @@ Source: [Techsini Multi Device Website Mockup Generator](http://techsini.com/mul
      - Confirm the addition: this will add the watch details to the google sheet and show them the updated collection or wishlist.
      - Cancel the addition: this will them give them the option to start again, go back to the main menu or quit the app.
   
+  
   | Step | Screenshot |
   | --- | --- |
   | Choosing which list to add to: | ![Features - Add watch](documentation/features/wom_feature_add_menu.png "Add a new watch option") |
@@ -106,7 +107,6 @@ Source: [Techsini Multi Device Website Mockup Generator](http://techsini.com/mul
   | --- | --- |
   | ![Feature - user validation](documentation/features/wom_feature_add_wishlist_make_confirm.png "User detail self validation") | ![Feature - user validation](documentation/features/wom_feature_add_wishlist_final_prompt.png "User overview self validation") |
 
-
 ### Future Features
 
 - I would like to add the feature that if you're add a watch to the collection, it looks to see if it's in the wishlist and if so, asks if the user wants to remove it from the wishlist.
@@ -125,7 +125,6 @@ Source: [Techsini Multi Device Website Mockup Generator](http://techsini.com/mul
 - [![Heroku](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) used for hosting the deployed back-end site.
 - [![Google Sheets](https://img.shields.io/badge/Google_Sheets-grey?logo=googlesheets&logoColor=34A853)](https://docs.google.com/spreadsheets) used for storing data from my Python app.
 - [![Lucid](https://img.shields.io/badge/Lucidchart-grey?logo=lucid&logoColor=FF9E0F)](https://www.lucidchart.com/pages) used for creating the flowchart for the apps logic.
-
 
 ## Data Model
 
