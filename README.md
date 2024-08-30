@@ -10,6 +10,19 @@ The Watch-o-Matic is a handy tool to keep track of your watch collection. As wat
 
 Source: [Techsini Multi Device Website Mockup Generator](http://techsini.com/multi-mockup/?url=https://apeskinian-watch-o-matic-8cd45839ba26.herokuapp.com/)
 
+## UX
+
+The strategy was to create a tool that can help a watch enthusiast keep track of their watch collection.
+
+The scope of features that I wanted to include were:
+- Being able to view the watches owned in a collection.
+- Having a wishlist so that the user can keep track of watches that they like / intend to buy.
+- Being able to add to either of these lists easily.
+
+As this is a command line based app, it would follow a menu and prompt structure. A main menu will give the user options to choose from the three main features. Then as it goes through each feature more prompts for input as needed will follow.
+
+I used a flowchart to map out the apps logic and proceeded to code it from there to run in the provided terminal.
+
 ## User Stories
 
 ### New Site Users
