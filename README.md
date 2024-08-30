@@ -152,29 +152,55 @@ Below is the flowchart of the main process of this Python program. It shows the 
 The program uses classes as a blueprint for the project's objects (OOP). This allows for the object to be reusable.
 
 ```python
-class Person:
-    """ Insert docstring comments here """
-    def __init__(self, name, age, health, inventory):
-        self.name = name
-        self.age = age
-        self.health = health
-        self.inventory = inventory
+class Watch:
+    """
+    A watch object which is passed when adding a new watch to either the
+    current collection or the wishlist.
+    """
+    def __init__(self, make, model, movement, sheet):
+        self.make = make
+        self.model = model
+        self.movement = movement
+        self.sheet = sheet
+
+    def add_to_sheet(self):
+        print(f'Adding watch to {self.sheet}...\n')
+        worksheet = SHEET.worksheet(self.sheet)
+        worksheet.append_row([self.make, self.model, self.movement])
+        print(
+            f'New watch successfully added to {self.sheet}. '
+            f'Loading {self.sheet}...\n'
+        )
+        view_selection(self.sheet)
 ```
+
+The class methods used in theis application are:
+
+- `add_to_sheet(self)`
+   - Adds the watch object to the google sheet
 
 The primary functions used on this application are:
 
-- `get_sales_data()`
-    - Get sales figures input from the user.
-- `validate_data()`
-    - Converts all string values into integers.
-- `update_worksheet()`
-    - Update the relevant worksheet with the data provided.
-- `calculate_surplus_data()`
-    - Compare sales with stock and calculate the surplus for each item type.
-- `get_last_5_entries_sales()`
-    - Collects columns of data from sales worksheet.
-- `calculate_stock_data()`
-    -  Calculate the average stock for each item type, adding 10%.
+- `clear()`
+    -  Clears the terminal to keep a clean asthetic.
+- `validate(user_input, check, request)`
+    -  Validates all user inputs.
+- `start_over()`
+    -  Gives the user options after they have cancelled a watch addition.
+- `get_watch_detail(detail, is_movement)`
+    -  Gathers details for the creation of a new watch object.
+- `add_watch()`
+    -  Creates a watch object from the Watch class and adds it to the selected google sheet via the class method.
+- `continue_app()`
+    -  Checks to see if the user wishes to continue after an action.
+- `show_table(table, pages, sheet)`
+    -  Displays the requested collection or wishlist in table format.
+- `view_selection(sheet_choice)`
+    -  Prepares the table to be shown for either the collection or wishlist.
+- `get_choice()`
+    -  Retrieves the users main menu selection.
+- `menu()`
+    -  Displays the main menu.
 - `main()`
     - Run all program functions.
 
@@ -184,10 +210,11 @@ I've used the following Python packages and/or external imported packages.
 
 - `gspread`: used with the Google Sheets API
 - `google.oauth2.service_account`: used for the Google Sheets API credentials
-- `time`: used for adding time delays
+- `PrettyTable`: used to create the tables from the google sheets
 - `os`: used for adding a `clear()` function
-- `colorama`: used for including color in the terminal
-- `random`: used to get a random choice from a list
+- `time`: used for adding time delays
+- `getpass`: used for press ENTER to continue as it does not show any other keys pressed before
+- `math`: used to calculate the amount of pages required for the tables
 
 ## Testing
 
