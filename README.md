@@ -4,86 +4,11 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/apeskinian/p3_watch-o-matic)](https://github.com/apeskinian/p3_watch-o-matic/commits/main)
 [![GitHub repo size](https://img.shields.io/github/repo-size/apeskinian/p3_watch-o-matic)](https://github.com/apeskinian/p3_watch-o-matic)
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
+The Watch-o-Matic is a handy tool to keep track of your watch collection. As watch enthusiast's collection is never complete, you can also keep track of your wishlist to plan your future purchases! Each list can be added to when you either treat yourself to a new watch or find one that you want to add to the wishlist. The make, model and movement type of each watch are clearly displayed when either the collection or wishlist is requested.
 
-!! IMPORTANT !! RE: Table of Contents
+![WOM Mockup](documentation/screenshots/wom_mockups.png)
 
-DO NOT add a Table of Contents to your README or TESTING!!
-These are outdated since 2021 when GitHub added them built-in to Markdown files automatically.
-
-Assessors see this as bad practice since it's outdated for a few years now,
-as if you've taken it from someone else's project that did the same thing.
-
----
-
-In this section, you will include a few paragraphs providing an overview of your project.
-Essentially, this part is your "sales pitch".
-
-At this stage, you should have a name for your project so use it!
-Don't introduce the project as a "portfolio project" for the diploma.
-
-In this section, describe what the project hopes to accomplish, who it is intended to target, and how it will be useful to the target audience.
-
-Consider adding a mockup image using the "Am I Responsive" website.
-Here's your deployed site as an example:
-https://ui.dev/amiresponsive?url=https://apeskinian-watch-o-matic-8cd45839ba26.herokuapp.com
-
-⚠️ NOTE: Issues generating site mockups (Django projects)
-This is likely due to security policies with your deployed site.
-If you open up your dev tools, there may be an error referencing `X-Frame-Options`.
-For Chrome users, head over to http://bit.ly/3iRPn4u and install the extension within your browser.
-Once installed, navigate back to the site above.
-You should find your site rendering in the various devices.
-Alternatively, open your project in Gitpod and run the server.
-Once the site is running, click the `Ports` tab at the bottom of your Gitpod workspace (Ports: 2205, 05432, 8000... ).
-Click the padlock on port `8000`.
-This will make your local page public temporarily.
-Now copy the URL of your live-preview page into the responsive tool above.
-You should find your site rendering in the various devices.
-
-Screenshots for the README and testing should not be inside of `assets/` or `static/` image folders.
-(reminder: `assets/` and `static/` are for files used on the live site, not documentation)
-Consider adding a new folder called `documentation`, and add the amiresponsive screenshot inside of that folder.
-To add the image into your README, use this format:
-(assuming you have a new folder called `documentation` with an image called "mockup.png")
-
-![screenshot](documentation/mockup.png)
-
-Note: Markdown files (.md) should not contain HTML elements like `img`, `br`, `div`, `a`, etc, only Markdown formatting.
-Find out more about using Markdown elements here:
-https://pandao.github.io/editor.md/en.html
-
----
-
-GitHub now supports CALLOUTS in Markdown files.
-There are some callouts already embedded in this application for you.
-However, if you feel that you want to add more, there are certain ones you can use.
-
-NOTE: the preview for callouts isn't yet supported in Gitpod/Codeanywhere/VSCode/etc.
-You'll have to commit/push the changes to GitHub to see it in action.
-
-> [!NOTE]  
-> BLUE: Highlights information that users should take into account, even when skimming.
-
-> [!TIP]  
-> GREEN: Optional information to help a user be more successful.
-
-> [!IMPORTANT]  
-> PURPLE: Crucial information necessary for users to succeed.
-
-> [!WARNING]  
-> YELLOW: Critical content demanding immediate user attention due to potential risks.
-
-> [!CAUTION]  
-> RED: Negative potential consequences of an action.
-
-Source: https://github.com/orgs/community/discussions/16925
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-![screenshot](documentation/mockup.png)
-
-source: [amiresponsive](https://ui.dev/amiresponsive?url=https://apeskinian-watch-o-matic-8cd45839ba26.herokuapp.com)
+Source: [Techsini Multi Device Website Mockup Generator](http://techsini.com/multi-mockup/?url=https://apeskinian-watch-o-matic-8cd45839ba26.herokuapp.com/)
 
 ## UX
 
