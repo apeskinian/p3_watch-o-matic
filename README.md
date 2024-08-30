@@ -82,6 +82,8 @@ In this section, you will briefly explain your design processes.
   | Options given when addition is cancelled: | ![Features - Add watch](documentation/features/wom_feature_add_cancelled.png "Addition cancelled menu") |
 
 - ### User input validation
+
+  #### Invalid inputs
   Everytime the user is asked for input it is validated against preset acceptable parameters for each questions. When the app is given an invalid response it will alert the user and show them what they entered highlighted in red. It will then prompt them to try again reminding them of the options that are expected. This will repeat until a valid answer is given.
 
   | Invalid numeric entry | Invalid alphanumeric entry |
@@ -96,14 +98,21 @@ In this section, you will briefly explain your design processes.
   | ![Features - validation](documentation/features/wom_feature_validation_confirmmake_num.png "Invalid numeric") | ![Features - validation](documentation/features/wom_feature_validation_confirmmake_alpha.png "Invalid alphanumeric") |
   | ![Features - validation](documentation/features/wom_feature_validation_confirmmodel_num.png "Invalid numeric") | ![Features - validation](documentation/features/wom_feature_validation_confirmmodel_alpha.png "Invalid alphanumeric") |
 
+  #### No inputs
   If the user does not input anything and presses enter they are informed this and asked to try again.
 
+  | Non input validation | Non input validation | Non input validation |
+  | --- | --- | --- |
+  | ![Features - validation](documentation/features/wom_feature_validation_noinput_mm.png "No input main menu") | ![Features - validation](documentation/features/wom_feature_validation_noinput_viewcoll.png "No input viewing collection") | ![Features - validation](documentation/features/wom_feature_validation_noinput_viewwish.png "No input viewing wishlist") |
+  | ![Features - validation](documentation/features/wom_feature_validation_noinput_addmenu.png "No input add watch menu") | ![Features - validation](documentation/features/wom_feature_validation_noinput_makeconfirm.png "No input make confirm") | ![Features - validation](documentation/features/wom_feature_validation_noinput_modelconfirm.png "No input model confirm") |
+  | ![Features - validation](documentation/features/wom_feature_validation_noinput_movement.png "No input movement") | ![Features - validation](documentation/features/wom_feature_validation_noinput_overview.png "No input overview") | ![Features - validation](documentation/features/wom_feature_validation_noinput_cancel.png "No input cancel") |
   
-  
+  #### Self validation
   The only exception to this validation is when entering make and model details for a new watch. As there are virtually endless possibilities for watch makes and names the user is prompted to validate their own input. They have two chances to validate, once when they enter each detail and again before the watch is added.
-
-  ![Feature - user validation](documentation/features/wom_feature_add_wishlist_make_confirm.png "User detail self validation")
-  ![Feature - user validation](documentation/features/wom_feature_add_wishlist_final_prompt.png "User overview self validation")
+  
+  | User Self Validation for details | User self validation for overview |
+  | --- | --- |
+  | ![Feature - user validation](documentation/features/wom_feature_add_wishlist_make_confirm.png "User detail self validation") | ![Feature - user validation](documentation/features/wom_feature_add_wishlist_final_prompt.png "User overview self validation") |
 
 
 ### Future Features
