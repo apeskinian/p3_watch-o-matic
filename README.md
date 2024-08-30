@@ -60,6 +60,7 @@ Source: [Techsini Multi Device Website Mockup Generator](http://techsini.com/mul
      - Confirm the addition: this will add the watch details to the google sheet and show them the updated collection or wishlist.
      - Cancel the addition: this will them give them the option to start again, go back to the main menu or quit the app.
   
+
   
   | Step | Screenshot |
   | --- | --- |
