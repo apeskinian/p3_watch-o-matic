@@ -20,27 +20,18 @@ In this section, you will briefly explain your design processes.
 
 ## User Stories
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-In this section, list all of your user stories for the project.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 ### New Site Users
 
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
+- As a new site user, I would like to add all my watches to the app, so that I can see all the watches I own.
+- As a new site user, I would like to add a new watch that I've bought to the app, so that I can see that it's in my collection.
+- As a new site user, I would like to add a new watch to my wishlist, so that I can see what I want to buy in the future.
 
 ### Returning Site Users
 
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
+- As a returning site user, I would like to view my current watch collection, so that I can keep track of the watches I own.
+- As a returning site user, I would like to view my wishlist, so that I can decide whether it's time to buy a new watch.
+- As a returning site user, I would like to add a new watch that I've bought to the app, so that I can see that it's in my collection.
+- As a returning site user, I would like to add a new watch to my wishlist, so that I can see what I want to buy in the future.
 
 ## Features
 
