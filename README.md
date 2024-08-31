@@ -140,7 +140,7 @@ I used a flowchart to map out the apps logic and proceeded to code it from there
 
 ## Data Model
 
-### Flowchart
+### Flowcharts
 
 To follow best practice, a flowchart was created for the app's logic,
 and mapped out before coding began using a free version of
@@ -150,11 +150,10 @@ Below is the flowchart of the main process of this Python program. It shows the 
 
 ![screenshot](documentation/lucid/wom_lucid.png)
 
-To follow best practice, a flowchart was created for the app's logic,
-and mapped out before coding began using a free version of
+I also made an interactive version of the flowchart using a free version of
 [Mermaid](https://www.mermaidchart.com/)
 
-Below is the flowchart of the main process of this Python program. It shows the entire cycle of the program.
+Below is the mermaid flowchart of the main process of this Python program. It shows the entire cycle of the program.
 
 ```mermaid
 ---
