@@ -170,28 +170,15 @@ The aforementioned tests are just an example of a few different project scenario
 
 ## User Story Testing
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Testing user stories is actually quite simple, once you've already got the stories defined on your README.
-
-Most of your project's **features** should already align with the **user stories**,
-so this should as simple as creating a table with the user story, matching with the re-used screenshot
-from the respective feature.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 | User Story | Screenshot |
 | --- | --- |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature01.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature02.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature03.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature04.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature05.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature06.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature07.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature08.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature09.png) |
-| repeat for all remaining user stories | x |
+| As a new site user, I would like to add all my watches to the app, so that I can see all the watches I own. | ![screenshot](documentation/features/wom_feature_add_collection_final_prompt.png) |
+| As a new site user, I would like to add a new watch that I've bought to the app, so that I can see that it's in my collection. | ![screenshot](documentation/features/wom_feature_add_collection_final_prompt.png) |
+| As a new site user, I would like to add a new watch to my wishlist, so that I can see what I want to buy in the future. | ![screenshot](documentation/features/wom_feature_add_wishlist_final_prompt.png) |
+| As a returning site user, I would like to view my current watch collection, so that I can keep track of the watches I own. | ![screenshot](documentation/features/wom_feature_collection_01.png) |
+| As a returning site user, I would like to view my wishlist, so that I can decide whether it's time to buy a new watch. | ![screenshot](documentation/features/wom_feature_wishlist.png) |
+| As a returning site user, I would like to add a new watch that I've bought to the app, so that I can see that it's in my collection. | ![screenshot](documentation/features/wom_feature_add_collection_final_prompt.png) |
+| As a returning site user, I would like to add a new watch to my wishlist, so that I can see what I want to buy in the future. | ![screenshot](documentation/features/wom_feature_add_wishlist_final_prompt.png) |
 
 ## Bugs
 
