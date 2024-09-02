@@ -117,13 +117,13 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 |  | Testing no input and just pressing the ENTER key | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful | ![screenshot](documentation/defensive/aw7/wom_dp_aw7_invalid_enter.gif "No input and ENTER pressed") |
 |  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful | ![screenshot](documentation/defensive/aw7/wom_dp_aw7_invalid_multi.gif "Multiple invalid inputs followed by valid input") |
 | Watch addition cancelled |  |  |  |  |  |
-|  | Testing valid input of 1 | User should be taken to the beginning of the add watch section | Test successful |  |
-|  | Testing valid input of 2 | User should be taken to the main menu | Test successful |  |
-|  | Testing valid input of 3 | User should be shown the app exit message and app ends | Test successful |  |
-|  | Testing invalid numeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
-|  | Testing invalid alphanumeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
-|  | Testing no input and just pressing the ENTER key | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
-|  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful |  |
+|  | Testing valid input of 1 | User should be taken to the beginning of the add watch section | Test successful | ![screenshot](documentation/defensive/aw8/wom_dp_aw8_valid_1.gif "Valid input of 1") |
+|  | Testing valid input of 2 | User should be taken to the main menu | Test successful | ![screenshot](documentation/defensive/aw8/wom_dp_aw8_valid_2.gif "Valid input of 2") |
+|  | Testing valid input of 3 | User should be shown the app exit message and app ends | Test successful | ![screenshot](documentation/defensive/aw8/wom_dp_aw8_valid_3.gif "Valid input of 3") |
+|  | Testing invalid numeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful | ![screenshot](documentation/defensive/aw8/wom_dp_aw8_invalid_num.gif "Invalid numeric input") |
+|  | Testing invalid alphanumeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful | ![screenshot](documentation/defensive/aw8/wom_dp_aw8_invalid_alpha.gif "Invalid alphanumeric input") |
+|  | Testing no input and just pressing the ENTER key | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful | ![screenshot](documentation/defensive/aw8/wom_dp_aw8_invalid_enter.gif "No input and ENTER pressed") |
+|  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful | ![screenshot](documentation/defensive/aw8/wom_dp_aw8_invalid_multi.gif "Multiple invalid inputs followed by valid input") |
 
 ## User Story Testing
 
