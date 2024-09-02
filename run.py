@@ -271,7 +271,7 @@ def show_table(table, pages, sheet):
     """
     # Set table min column widths
     table._min_width = {'Make': 30, 'Model': 30, 'Movement': 10}
-    #table._max_width = {'Make': 30, 'Model': 30, 'Movement': 10}
+    table._max_width = {'Make': 30, 'Model': 30, 'Movement': 10}
 
     # Set initial page view variables
     page_count = 0
