@@ -152,12 +152,19 @@ def get_watch_detail(detail, is_movement):
         while True:
             watch_detail = input(f'Please enter the {detail} of the watch:\n')
             while True:
-                # Get user to validate their own input.
-                user_confirm = input(
-                    f'\nYou entered {CHECK_COLOUR}{watch_detail}{CLEAR}, '
-                    f'is this correct? ({CHOICE_COLOUR}y{CLEAR}/'
-                    f'{CHOICE_COLOUR}n{CLEAR}):\n'
-                )
+                # Get user to validate their own input, double check empties.
+                if watch_detail == '':
+                    user_confirm = input(
+                        f'\nYou did not enter anything for the {detail}, '
+                        f'is this correct? ({CHOICE_COLOUR}y{CLEAR}/'
+                        f'{CHOICE_COLOUR}n{CLEAR}):\n'
+                    )
+                else:
+                    user_confirm = input(
+                        f'\nYou entered {CHECK_COLOUR}{watch_detail}{CLEAR}, '
+                        f'is this correct? ({CHOICE_COLOUR}y{CLEAR}/'
+                        f'{CHOICE_COLOUR}n{CLEAR}):\n'
+                    )
                 requested = 'Please enter y or n'
                 if validate(user_confirm, ['y', 'n'], requested):
                     if user_confirm.lower() == 'y':
