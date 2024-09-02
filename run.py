@@ -277,7 +277,7 @@ def show_table(table, pages, sheet):
     getpass is used so that any other key entries are not seen.
     """
     # Set table min column widths
-    table._min_width = {'Make': 15, 'Model': 15, 'Movement': 10}
+    table._min_width = {'Make': 30, 'Model': 30, 'Movement': 10}
 
     # Set initial page view variables
     page_count = 0

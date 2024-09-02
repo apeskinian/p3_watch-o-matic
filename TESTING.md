@@ -58,7 +58,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 |  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful |  |
 | View Collection |  |  |  |  |  |
 |  | Testing valid input of ENTER for pagination | User should be shown the next page of the list | Test successful |  |
-|  | Testing invalid inputs for pagination prompt | The app should not show any inputs, effectively ignoring everything until enter is pressed | Test successful |  |
+|  | Testing invalid inputs for pagination prompt | The app should not show any inputs, effectively ignoring everything until ENTER is pressed | Test successful |  |
 |  | Testing valid input of y for y/n prompt | User should be shown the main menu | Test successful |  |
 |  | Testing valid input of n for y/n prompt | User should be shown the app exit message and app ends | Test successful |  |
 |  | Testing invalid numeric inputs for y/n prompt | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
@@ -67,7 +67,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 |  | Testing multiple invalid inputs for y/n prompt  | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful |  |
 | View Wishlist |  |  |  |  |  |
 |  | Testing valid input of ENTER for pagination | User should be shown the next page of the list | Test successful |  |
-|  | Testing invalid inputs for pagination prompt | The app should not show any inputs, effectively ignoring everything until enter is pressed | Test successful |  |
+|  | Testing invalid inputs for pagination prompt | The app should not show any inputs, effectively ignoring everything until ENTER is pressed | Test successful |  |
 |  | Testing valid input of y for y/n prompt | User should be shown the main menu | Test successful |  |
 |  | Testing valid input of n for y/n prompt | User should be shown the app exit message and app ends | Test successful |  |
 |  | Testing invalid numeric inputs for y/n prompt  | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
@@ -79,7 +79,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 |  | Testing valid input of 2 | User should be taken to the input screen for Watch make with a confirmation message adding to Wishlist | Test successful |  |
 |  | Testing invalid numeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
 |  | Testing invalid alphanumeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
-|  | Testing no input and just pressing the ENTER key for y/n prompt | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing no input and just pressing the ENTER | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
 |  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful |  |
 | Add watch -  user input confirmation for make |  |  |  |  |  |
 |  | Testing a standard length input | User should be prompted to validate their input with y/n response | Test successful |  |
