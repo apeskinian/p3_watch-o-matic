@@ -92,8 +92,8 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 |  | Testing no input and just pressing the ENTER key | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful | ![screenshot](documentation/defensive/aw3/wom_dp_aw3_invalid_enter.gif "No input and ENTER pressed") |
 |  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful | ![screenshot](documentation/defensive/aw3/wom_dp_aw3_invalid_multi.gif "Multiple invalid inputs followed by valid input") |
 | Add watch -  user input confirmation for model |  |  |  |  |  |
-|  | Testing user input | User should be prompted to validate their input with y/n response | Test successful |  |
-|  | Testing no input and pressing ENTER | User should be made aware that no input was given and prompted to validate this input with y/n response | Test successful |  |
+|  | Testing user input | User should be prompted to validate their input with y/n response | Test successful | ![screenshot](documentation/defensive/aw4/wom_dp_aw4_standard.gif "Testing user input") |
+|  | Testing no input and pressing ENTER | User should be made aware that no input was given and prompted to validate this input with y/n response | Test successful | ![screenshot](documentation/defensive/aw4/wom_dp_aw4_none.gif "Testing blank user input") |
 | Add watch -  user input validation for model |  |  |  |  |  |
 |  | Testing valid input of y | User should be taken to the watch movement input | Test successful |  |
 |  | Testing valid input of n | User should be prompted to re enter the watch model | Test successful |  |
