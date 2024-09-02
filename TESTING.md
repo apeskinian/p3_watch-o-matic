@@ -49,13 +49,13 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Page | Test | Expectation | Result | Fix | Screenshot |
 | --- | --- | --- | --- | --- | --- |
 | Main Menu |  |  |  |  |  |
-|  | Testing valid input of 1 | User should be shown the current collection | Test successful |  |
-|  | Testing valid input of 2 | User should be shown the wishlist | Test successful |  |
-|  | Testing valid input of 3 | The process of adding a watch should start | Test successful |  |
-|  | Testing invalid numeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
-|  | Testing invalid alphanumeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
-|  | Testing no input and just pressing the ENTER key | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
-|  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful |  |
+|  | Testing valid input of 1 | User should be shown the current collection | Test successful | ![screenshot](documentation/defensive/mm/wom_dp_mm_valid_1.gif "Valid input of 1") |
+|  | Testing valid input of 2 | User should be shown the wishlist | Test successful | ![screenshot](documentation/defensive/mm/wom_dp_mm_valid_2.gif "Valid input of 2") |
+|  | Testing valid input of 3 | The process of adding a watch should start | Test successful | ![screenshot](documentation/defensive/mm/wom_dp_mm_valid_3.gif "Valid input of 3") |
+|  | Testing invalid numeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful | ![screenshot](documentation/defensive/mm/wom_dp_mm_invalid_num.gif "Invalid numeric input") |
+|  | Testing invalid alphanumeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful | ![screenshot](documentation/defensive/mm/wom_dp_mm_invalid_alpha.gif "Invalid alphanumeric input") |
+|  | Testing no input and just pressing the ENTER key | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful | ![screenshot](documentation/defensive/mm/wom_dp_mm_invalid_enter.gif "No input and ENTER pressed") |
+|  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful | ![screenshot](documentation/defensive/mm/wom_dp_mm_invalid_multi.gif "Multiple invalid inputs followed by valid input") |
 | View Collection |  |  |  |  |  |
 |  | Testing valid input of ENTER for pagination | User should be shown the next page of the list | Test successful |  |
 |  | Testing invalid inputs for pagination prompt | The app should not show any inputs, effectively ignoring everything until ENTER is pressed | Test successful |  |
