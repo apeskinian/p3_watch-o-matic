@@ -46,7 +46,76 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Defensive Programming
 
-
+| Page | Test | Expectation | Result | Fix | Screenshot |
+| --- | --- | --- | --- | --- | --- |
+| Main Menu |  |  |  |  |  |
+|  | Testing valid input of 1 | User should be shown the current collection | Test successful |  |
+|  | Testing valid input of 2 | User should be shown the wishlist | Test successful |  |
+|  | Testing valid input of 3 | The process of adding a watch should start | Test successful |  |
+|  | Testing invalid numeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing invalid alphanumeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing no input and just pressing the ENTER key | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful |  |
+| View Collection |  |  |  |  |  |
+|  | Testing valid input of y | User should be shown the main menu | Test successful |  |
+|  | Testing valid input of n | User should be shown the app exit message and app ends | Test successful |  |
+|  | Testing valid input of ENTER for pagination | User should be shown the next page of the list | Test successful |  |
+|  | Testing invalid numeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing invalid alphanumeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing no input and just pressing the ENTER key for y/n prompt | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful |  |
+| View Wishlist |  |  |  |  |  |
+|  | Testing valid input of y | User should be shown the main menu | Test successful |  |
+|  | Testing valid input of n | User should be shown the app exit message and app ends | Test successful |  |
+|  | Testing valid input of ENTER for pagination | User should be shown the next page of the list | Test successful |  |
+|  | Testing invalid numeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing invalid alphanumeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing no input and just pressing the ENTER key for y/n prompt | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful |  |
+| Add watch - list selection |  |  |  |  |  |
+|  | Testing valid input of 1 | User should be taken to the input screen for Watch make with a confirmation message adding to collection | Test successful |  |
+|  | Testing valid input of 2 | User should be taken to the input screen for Watch make with a confirmation message adding to Wishlist | Test successful |  |
+|  | Testing invalid numeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing invalid alphanumeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing no input and just pressing the ENTER key for y/n prompt | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful |  |
+| Add watch -  user input confirmation for make |  |  |  |  |  |
+|  | Testing a standard length input | User should be prompted to validate their input with y/n response | Test successful |  |
+|  | Testing a very long input | User should be prompted to validate their input with y/n response. Also on final watch confirmation if the total length of all characters for all details is over 70 they should get a warning about the table display | Test successful |  |
+|  | Testing no input and pressing ENTER | User should be made aware that no input was given and prompted to validate this input with y/n response | Test successful |  |
+| Add watch -  user input validation for make |  |  |  |  |  |
+|  | Testing valid input of y | User should be taken to the watch model input | Test successful |  |
+|  | Testing valid input of n | User should be prompted to re enter the watch make | Test successful |  |
+|  | Testing invalid numeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing invalid alphanumeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing no input and just pressing the ENTER key | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful |  |
+| Add watch -  user input confirmation for model |  |  |  |  |  |
+|  | Testing a standard length input | User should be prompted to validate their input with y/n response | Test successful |  |
+|  | Testing a very long input | User should be prompted to validate their input with y/n response. Also on final watch confirmation if the total length of all characters for all details is over 70 they should get a warning about the table display | Test successful |  |
+|  | Testing no input and pressing ENTER | User should be made aware that no input was given and prompted to validate this input with y/n response | Test successful |  |
+| Add watch -  user input validation for model |  |  |  |  |  |
+|  | Testing valid input of y | User should be taken to the watch movement input | Test successful |  |
+|  | Testing valid input of n | User should be prompted to re enter the watch model | Test successful |  |
+|  | Testing invalid numeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing invalid alphanumeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing no input and just pressing the ENTER key | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful |  |
+| Add watch -  watch addition overview input validation |  |  |  |  |  |
+|  | Testing valid input of y | Watch should be added to the google sheet and user informed of success before being shown the updated table | Test successful |  |
+|  | Testing valid input of n | User should be given the menu for watch addition cancellation, google sheet should not be updated | Test successful |  |
+|  | Testing invalid numeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing invalid alphanumeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing no input and just pressing the ENTER key | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful |  |
+| Watch addition cancelled |  |  |  |  |  |
+|  | Testing valid input of 1 | User should be taken to the beginning of the add watch section | Test successful |  |
+|  | Testing valid input of 2 | User should be taken to the main menu | Test successful |  |
+|  | Testing valid input of 3 | User should be shown the app exit message and app ends | Test successful |  |
+|  | Testing invalid numeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing invalid alphanumeric inputs | Validation should fail and user be informed that they entered an invalid input showing them what was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing no input and just pressing the ENTER key | Validation should fail and user be informed that no input was entered. They should be reminded of the accepted inputs and prompted to try again | Test successful |  |
+|  | Testing multiple invalid inputs | Validation should continue to fail for each invalid input giving the correct response until a valid input is entered at which point the app should proceed to the relevant point | Test successful |  |
 
 ## User Story Testing
 
