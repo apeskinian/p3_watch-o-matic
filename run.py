@@ -226,13 +226,6 @@ def add_watch():
 
     # Asking user for confirmation to add new watch to selected list.
     while True:
-        if int(total_length) > 70:
-            print(
-                f'{ERROR_COLOUR}WARNING!\n\n'
-                'Total character amount for these watch details\n'
-                'will produce a glitch when viewing the table.\n\n'
-                f'Data will be saved correctly to the sytem.{CLEAR}\n'
-            )
         final_confirm = input(
             f'Enter {CHOICE_COLOUR}y{CLEAR} to accept or '
             f'{CHOICE_COLOUR}n{CLEAR} to cancel:\n'
