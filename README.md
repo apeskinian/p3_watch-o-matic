@@ -121,7 +121,7 @@ I used a flowchart to map out the apps logic and proceeded to code it from there
 
 ### Future Features
 
-- I would like to add the feature that if you're add a watch to the collection, it looks to see if it's in the wishlist and if so, asks if the user wants to remove it from the wishlist.
+- I would like to add the feature that if you're adding a watch to the collection, it looks to see if it's in the wishlist and if so, asks if the user wants to remove it from the wishlist.
 - Being able to move a watch from the wishlist to the collection. This is similar to the above feature but acts on the basis that the user remembers it was in the wishlist so doesn't have to enter the details.
 - Being able to remove watches from either list. This would be useful if the user sold a watch and no longer owns it.
 - Having user specific collections that can be accessed securely.

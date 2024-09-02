@@ -46,9 +46,9 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Defensive Programming
 
-| Page | Test | Expectation | Result | Fix | Screenshot |
-| --- | --- | --- | --- | --- | --- |
-| Main Menu |  |  |  |  |  |
+| Page | Test | Expectation | Result | Screenshot |
+| --- | --- | --- | --- | --- |
+| Main Menu |  |  |  |  |
 |  | Testing valid input of 1 | User should be shown the current collection | Test successful | ![screenshot](documentation/defensive/mm/wom_dp_mm_valid_1.gif "Valid input of 1") |
 |  | Testing valid input of 2 | User should be shown the wishlist | Test successful | ![screenshot](documentation/defensive/mm/wom_dp_mm_valid_2.gif "Valid input of 2") |
 |  | Testing valid input of 3 | The process of adding a watch should start | Test successful | ![screenshot](documentation/defensive/mm/wom_dp_mm_valid_3.gif "Valid input of 3") |
