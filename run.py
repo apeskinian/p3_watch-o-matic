@@ -110,19 +110,13 @@ def start_over():
             menu()
         case '3':
             print(
-                'Thank you for using Watch-o-Matic. The app will now close'
+                'Thank you for using Watch-o-Matic. The app will now close...'
             )
-            time.sleep(0.5)
-            print('.')
-            time.sleep(0.5)
-            print('.')
-            time.sleep(0.5)
-            print('.')
-            time.sleep(0.5)
+            time.sleep(2)
             clear()
             print(
                 'Click the orange "RUN PROGRAM" button above to restart '
-                'the Watch-o-Matic'
+                'the Watch-o-Matic.'
             )
         case _:
             # This should never happen
@@ -271,18 +265,14 @@ def continue_app():
     if continue_check.lower() == 'y':
         menu()
     elif continue_check.lower() == 'n':
-        print('Thank you for using Watch-o-Matic. The app will now close...')
-        time.sleep(0.5)
-        print('.')
-        time.sleep(0.5)
-        print('.')
-        time.sleep(0.5)
-        print('.')
-        time.sleep(0.5)
+        print(
+            'Thank you for using Watch-o-Matic. The app will now close...'
+        )
+        time.sleep(2)
         clear()
         print(
             'Click the orange "RUN PROGRAM" button above to restart '
-            'the Watch-o-Matic'
+            'the Watch-o-Matic.'
         )
 
 
