@@ -110,7 +110,19 @@ def start_over():
             menu()
         case '3':
             print(
-                'Thank you for using Watch-o-Matic. The app will now close...'
+                'Thank you for using Watch-o-Matic. The app will now close'
+            )
+            time.sleep(0.5)
+            print('.')
+            time.sleep(0.5)
+            print('.')
+            time.sleep(0.5)
+            print('.')
+            time.sleep(0.5)
+            clear()
+            print(
+                'Click the orange "RUN PROGRAM" button above to restart '
+                'the Watch-o-Matic'
             )
         case _:
             # This should never happen
@@ -260,6 +272,18 @@ def continue_app():
         menu()
     elif continue_check.lower() == 'n':
         print('Thank you for using Watch-o-Matic. The app will now close...')
+        time.sleep(0.5)
+        print('.')
+        time.sleep(0.5)
+        print('.')
+        time.sleep(0.5)
+        print('.')
+        time.sleep(0.5)
+        clear()
+        print(
+            'Click the orange "RUN PROGRAM" button above to restart '
+            'the Watch-o-Matic'
+        )
 
 
 def show_table(table, pages, sheet):
