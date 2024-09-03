@@ -142,8 +142,8 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Decription | Bug | Solution | Result |
 | --- | --- | --- | --- |
 | The PrettyTable was showing some odd behaviour when the content width was larger than the deployment terminal. To fix this, I added the max-width parameters to the table so that if the content was longer the table would start to wrap text to the row below and stop the strange display behaviour. | ![screenshot](documentation/bugs/wom_bug_table_glitch.png "Table display behaviour") | ![screenshot](documentation/bugs/wom_bug_table_solution.png "Code to define the max-width of the columns") | ![screenshot](documentation/bugs/wom_bug_table_fixed.png "Table now displays correctly with long entries") |
-|  |  |  |  |
-|  |  |  |  |
+| AttributeError: module 'time' has no attribute "delay" ![screenshot](documentation/bugs//wom_bug_time_01.png "Error message") | ![screenshot](documentation/bugs/wom_bug_time_02.png "time.delay() used in error") | ![screenshot](documentation/bugs/wom_bug_time_solution.png "Replacing with time.sleep()") | Code works now |
+| FileNotFoundError: [Errno 2] No such file or directory: 'creds. json' | File was accidently renamed to cred.json ![screenshot](documentation/bugs/wom_bug_creds.png "File not found error") | Renamed file back to creds.json | App works |
 
 ## Unfixed Bugs
 
