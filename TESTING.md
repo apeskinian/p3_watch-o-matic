@@ -147,6 +147,9 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Known Issues
 
+### Deployment Terminal
+The clear() function only clears the first 24 lines in the deployment terminal on Heroku.
+
 ### Version Control
 I am aware that I have not been fully consistent in the appropriate format for my commit messages. Some have been over 50 characters and also not all have been written using the imperative mood.
 
