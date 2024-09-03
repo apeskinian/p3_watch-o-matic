@@ -145,6 +145,11 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | AttributeError: module 'time' has no attribute "delay" ![screenshot](documentation/bugs//wom_bug_time_01.png "Error message") | ![screenshot](documentation/bugs/wom_bug_time_02.png "time.delay() used in error") | ![screenshot](documentation/bugs/wom_bug_time_solution.png "Replacing with time.sleep()") | Code works now |
 | FileNotFoundError: [Errno 2] No such file or directory: 'creds. json' | File was accidentally renamed to cred.json ![screenshot](documentation/bugs/wom_bug_creds.png "File not found error") | Renamed file back to creds.json | App works |
 
+## Known Issues
+
+### Version Control
+I am aware that I have not been fully consistent in the appropriate format for my commit messages. Some have been over 50 characters and also not all have been written using the imperative mood.
+
 ## Unfixed Bugs
 
 > [!NOTE]  
