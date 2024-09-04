@@ -153,6 +153,10 @@ All previously closed/fixed bugs can be tracked [here](https://github.com/apeski
 | FileNotFoundError: [Errno 2] No such file or directory: 'creds. json' | File was accidentally renamed to cred.json ![screenshot](documentation/bugs/wom_bug_creds.png "File not found error") | Renamed file back to creds.json | App works |
 | The PrettyTable was showing some odd behaviour when the content width was larger than the deployment terminal. To fix this, I added the max-width parameters to the table so that if the content was longer the table would start to wrap text to the row below and stop the strange display behaviour. | ![screenshot](documentation/bugs/wom_bug_table_glitch.png "Table display behaviour") | ![screenshot](documentation/bugs/wom_bug_table_solution.png "Code to define the max-width of the columns") | ![screenshot](documentation/bugs/wom_bug_table_fixed.png "Table now displays correctly with long entries") |
 
+**Version Control**
+
+I’ve noticed that some of my commit messages could be a bit more refined, with a few going over the ideal length, or not always sticking to the imperative mood. I’ll keep that in mind for future projects and commits to maintain a clearer, more consistent approach.
+
 **Open Issues**
 
 [![GitHub issues](https://img.shields.io/github/issues/apeskinian/p3_watch-o-matic)](https://github.com/apeskinian/p3_watch-o-matic/issues)
@@ -171,6 +175,3 @@ Any remaining open issues can be tracked [here](https://github.com/apeskinian/p3
 The clear() function only clears the first 24 lines in the deployment terminal on Heroku.
 
 ![screenshot](documentation/issues/wom_issue_terminal_clear.gif "Deployment terminal only clearing 24 lines")
-
-### Version Control
-I am aware that I have not been fully consistent in the appropriate format for my commit messages. Some have been over 50 characters and also not all have been written using the imperative mood.
