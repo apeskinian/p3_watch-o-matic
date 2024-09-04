@@ -250,7 +250,7 @@ class Watch:
         view_selection(self.sheet)
 ```
 
-The class methods used in theis application are:
+The class methods used in this application are:
 
 - `add_to_sheet(self)`
    - Adds the watch object to the google sheet
