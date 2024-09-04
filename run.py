@@ -115,7 +115,7 @@ def start_over():
             time.sleep(2)
             clear()
             print(
-                'Click the orange "RUN PROGRAM" button above to restart '
+                'Click the "RUN PROGRAM" button above to restart '
                 'the Watch-o-Matic.'
             )
         case _:
@@ -271,7 +271,7 @@ def continue_app():
         time.sleep(2)
         clear()
         print(
-            'Click the orange "RUN PROGRAM" button above to restart '
+            'Click the "RUN PROGRAM" button above to restart '
             'the Watch-o-Matic.'
         )
 
