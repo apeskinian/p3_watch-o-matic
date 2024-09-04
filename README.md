@@ -297,6 +297,16 @@ I've used the following Python packages and/or external imported packages.
 > [!NOTE]  
 > For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
+### GitHub Issues
+
+[GitHub Issues](https://github.com/apeskinian/p3_watch-o-matic/issues) served as a tool to track my bugs/issues.
+
+- [Open Issues](https://github.com/apeskinian/p3_watch-o-matic/issues) [![GitHub issues](https://img.shields.io/github/issues/apeskinian/p3_watch-o-matic)](https://github.com/apeskinian/p3_watch-o-matic/issues)
+
+- [Closed Issues](https://github.com/apeskinian/p3_watch-o-matic/issues?q=is%3Aissue+is%3Aclosed) [![GitHub closed issues](https://img.shields.io/github/issues-closed/apeskinian/p3_watch-o-matic)](https://github.com/apeskinian/p3_watch-o-matic/issues?q=is%3Aissue+is%3Aclosed)
+
+    ![screenshot](documentation/issues/wom_issues_closed.png "Guthub closed issues")
+
 ## Deployment
 
 Code Institute has provided a [template](https://github.com/Code-Institute-Org/python-essentials-template) to display the terminal view of this backend application in a modern web browser.

@@ -139,23 +139,38 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Bugs
 
-| Decription | Bug | Solution | Result |
+### GitHub **Issues**
+
+**Fixed Bugs**
+
+[![GitHub issue custom search](https://img.shields.io/github/issues-search?query=repo%3Aapeskinian%2Fp3_watch-o-matic%20label%3Abug&label=bugs)](https://github.com/apeskinian/p3_watch-o-matic/issues?q=is%3Aissue+is%3Aclosed+label%3Abug)
+
+All previously closed/fixed bugs can be tracked [here](https://github.com/apeskinian/p3_watch-o-matic/issues?q=is%3Aissue+is%3Aclosed).
+
+| Description | Bug | Solution | Result |
 | --- | --- | --- | --- |
-| The PrettyTable was showing some odd behaviour when the content width was larger than the deployment terminal. To fix this, I added the max-width parameters to the table so that if the content was longer the table would start to wrap text to the row below and stop the strange display behaviour. | ![screenshot](documentation/bugs/wom_bug_table_glitch.png "Table display behaviour") | ![screenshot](documentation/bugs/wom_bug_table_solution.png "Code to define the max-width of the columns") | ![screenshot](documentation/bugs/wom_bug_table_fixed.png "Table now displays correctly with long entries") |
 | AttributeError: module 'time' has no attribute "delay" ![screenshot](documentation/bugs//wom_bug_time_01.png "Error message") | ![screenshot](documentation/bugs/wom_bug_time_02.png "time.delay() used in error") | ![screenshot](documentation/bugs/wom_bug_time_solution.png "Replacing with time.sleep()") | Code works now |
 | FileNotFoundError: [Errno 2] No such file or directory: 'creds. json' | File was accidentally renamed to cred.json ![screenshot](documentation/bugs/wom_bug_creds.png "File not found error") | Renamed file back to creds.json | App works |
+| The PrettyTable was showing some odd behaviour when the content width was larger than the deployment terminal. To fix this, I added the max-width parameters to the table so that if the content was longer the table would start to wrap text to the row below and stop the strange display behaviour. | ![screenshot](documentation/bugs/wom_bug_table_glitch.png "Table display behaviour") | ![screenshot](documentation/bugs/wom_bug_table_solution.png "Code to define the max-width of the columns") | ![screenshot](documentation/bugs/wom_bug_table_fixed.png "Table now displays correctly with long entries") |
+
+**Open Issues**
+
+[![GitHub issues](https://img.shields.io/github/issues/apeskinian/p3_watch-o-matic)](https://github.com/apeskinian/p3_watch-o-matic/issues)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/apeskinian/p3_watch-o-matic)](https://github.com/apeskinian/p3_watch-o-matic/issues?q=is%3Aissue+is%3Aclosed)
+
+Any remaining open issues can be tracked [here](https://github.com/apeskinian/p3_watch-o-matic/issues).
+
+## Unfixed Bugs
+
+> [!NOTE]  
+> There are no remaining bugs that I am aware of.
 
 ## Known Issues
 
 ### Deployment Terminal
 The clear() function only clears the first 24 lines in the deployment terminal on Heroku.
 
-![screenshot](documentation/bugs/wom_issue_terminal_clear.gif "Deployment terminal only clearing 24 lines")
+![screenshot](documentation/issues/wom_issue_terminal_clear.gif "Deployment terminal only clearing 24 lines")
 
 ### Version Control
 I am aware that I have not been fully consistent in the appropriate format for my commit messages. Some have been over 50 characters and also not all have been written using the imperative mood.
-
-## Unfixed Bugs
-
-> [!NOTE]  
-> There are no remaining bugs that I am aware of.
