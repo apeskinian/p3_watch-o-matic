@@ -376,7 +376,7 @@ To run your own version of this app you will need to create your own google shee
 | sample data | sample data | Manual |
 | sample data | sample data | Quartz |
 
-A credentials file in JSON format from the Google Cloud Platform is also needed steps to obtain one are below:
+A credentials file in JSON format from the Google Cloud Platform is also needed:
 
 [Google Cloud Platform](https://console.cloud.google.com/)
 
