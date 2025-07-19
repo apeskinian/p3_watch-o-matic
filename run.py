@@ -51,7 +51,7 @@ class Watch:
 # Functions for app.
 def clear():
     """
-    Clears the terminal to keep a clean asthetic.
+    Clears the terminal to keep a clean aesthetic.
     """
     os.system("cls" if os.name == "nt" else "clear")
 
@@ -156,7 +156,9 @@ def get_watch_detail(detail, is_movement):
     # If the detail is not movement, prompt user for text input.
     else:
         while True:
-            watch_detail = input(f'Please enter the {detail} of the watch:\n')
+            watch_detail = input(
+                (f'Please enter the {detail} of the watch:\n').strip()
+            )
             while True:
                 # Get user to validate their own input, double check empties.
                 if watch_detail == '':
