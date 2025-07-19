@@ -53,7 +53,7 @@ class Watch:
 # Functions for app.
 def clear():
     """
-    Clears the terminal to keep a clean asthetic.
+    Clears the terminal to keep a clean aesthetic.
     """
     os.system("cls" if os.name == "nt" else "clear")
 
