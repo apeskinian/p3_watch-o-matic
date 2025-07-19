@@ -13,7 +13,9 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
 ]
+print('Loading data...')
 CREDS = Credentials.from_service_account_file('creds.json')
+
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('watch-o-matic')
@@ -51,7 +53,7 @@ class Watch:
 # Functions for app.
 def clear():
     """
-    Clears the terminal to keep a clean aesthetic.
+    Clears the terminal to keep a clean asthetic.
     """
     os.system("cls" if os.name == "nt" else "clear")
 
@@ -156,9 +158,9 @@ def get_watch_detail(detail, is_movement):
     # If the detail is not movement, prompt user for text input.
     else:
         while True:
-            watch_detail = input(
-                (f'Please enter the {detail} of the watch:\n').strip()
-            )
+            watch_detail = (
+                input(f'Please enter the {detail} of the watch:\n').strip()
+                )
             while True:
                 # Get user to validate their own input, double check empties.
                 if watch_detail == '':
@@ -176,7 +178,10 @@ def get_watch_detail(detail, is_movement):
                 requested = 'Please enter y or n'
                 if validate(user_confirm, ['y', 'n'], requested):
                     if user_confirm.lower() == 'y':
-                        return watch_detail
+                        if watch_detail != '':
+                            return watch_detail
+                        else:
+                            return 'n/a'
                     elif user_confirm.lower() == 'n':
                         break
 
