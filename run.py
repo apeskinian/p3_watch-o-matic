@@ -217,18 +217,30 @@ def add_watch():
         print('Adding watch to wishlist:\n')
         sheet_to_update = 'wishlist'
 
-    # Create new watch object
-    new_watch = Watch(
-        get_watch_detail('make', False),
-        get_watch_detail('model', False),
-        get_watch_detail('movement', True),
-        sheet_to_update
-    )
+    new_watch_make = get_watch_detail('make', False)
+    new_watch_model = get_watch_detail('model', False)
+    new_watch_movement = get_watch_detail('movement', True)
+
+    if new_watch_make == 'n/a' and new_watch_model == 'n/a':
+        print(
+            'Make and Model cannot both be blank\n\n'
+            'Please try again.\n'
+        )
+        getpass.getpass('Press ENTER to continue...\n')
+        add_watch()
+    else:
+        # Create new watch object
+        new_watch = Watch(
+            new_watch_make,
+            new_watch_model,
+            new_watch_movement,
+            sheet_to_update
+        )
 
     # Get total length of entered characters for warning if over 70
-    total_length = (
-        len(new_watch.make)+len(new_watch.model)+len(new_watch.movement)
-    )
+    # total_length = (
+    #     len(new_watch.make)+len(new_watch.model)+len(new_watch.movement)
+    # )
 
     # Presenting the proposed watch addition to the user.
     print(
@@ -312,7 +324,7 @@ def show_table(table, pages, sheet):
             print(f'Page {page_count}/{pages}\n')
         if page_count == pages:
             break
-        next_page = getpass.getpass('Press ENTER to continue...\n')
+        getpass.getpass('Press ENTER to continue...\n')
         clear()
 
 
