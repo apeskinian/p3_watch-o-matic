@@ -12,6 +12,10 @@
     <style>
         body {
             font-family: Arial;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         /**
@@ -155,6 +159,16 @@
             text-decoration: underline;
         }
 
+        .xterm-viewport {
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .xterm-screen {
+            border: 20px solid black;
+            border-radius: 20px;
+        }
+
         button {
             width: 200px;
             height: 40px;
@@ -162,7 +176,7 @@
             border: 1px solid grey;
             color: white;
             text-transform: uppercase;
-            margin: 10px;
+            margin: 20px;
             border-radius: 8px;
         }
     </style>
